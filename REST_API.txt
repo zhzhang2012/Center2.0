@@ -1,0 +1,4 @@
+# ProjectInfo CRUD
+POST /project/create
+POST /project/update
+GET /project/:projectId

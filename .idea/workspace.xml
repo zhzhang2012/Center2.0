@@ -6,6 +6,17 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439285776449" ignored="false" />
     <file path="/.gitignore" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439285864599" ignored="false" />
+    <file path="/project.js" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439302898800" ignored="false" />
+    <file path="/projects.js" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439296176169" ignored="false" />
+    <file path="/REST_API.txt" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439289477286" ignored="false" />
+    <file path="/server.js" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439290609396" ignored="false" />
+    <file path="/express.js" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439294997363" ignored="false" />
+    <file path="/README.md" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439293366307" ignored="false" />
+    <file path="/index.html" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439300979121" ignored="false" />
+    <file path="/index.ejs" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439302839481" ignored="false" />
+    <file path="/config.js" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439302943766" ignored="false" />
+    <file path="/index.js" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439301147755" ignored="false" />
+    <file path="/detail.html" changelist="87b9bb09-5e9b-411a-8169-adebeb935e6c" time="1439302987365" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,10 +36,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="index.ejs" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="51" selection-start="49" selection-end="49" vertical-scroll-proportion="0.13274336">
+            <state line="27" column="61" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapp/config/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="34" selection-start="630" selection-end="630" vertical-scroll-proportion="0.3761062">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/modules/project/project.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="48" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -49,7 +78,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/config/routes.js" />
+        <option value="$PROJECT_DIR$/config/express.js" />
+        <option value="$PROJECT_DIR$/webapp/modules/main/partials/index.html" />
+        <option value="$PROJECT_DIR$/webapp/modules/main/controllers/index.html" />
+        <option value="$PROJECT_DIR$/webapp/modules/main/controllers/index.js" />
+        <option value="$PROJECT_DIR$/webapp/modules/index/controllers/index.js" />
+        <option value="$PROJECT_DIR$/webapp/config/init.js" />
+        <option value="$PROJECT_DIR$/webapp/modules/project/controllers/list.html" />
+        <option value="$PROJECT_DIR$/webapp/modules/project/controllers/detail.js" />
+        <option value="$PROJECT_DIR$/webapp/modules/project/controllers/list.js" />
+        <option value="$PROJECT_DIR$/webapp/index.ejs" />
+        <option value="$PROJECT_DIR$/webapp/app.js" />
+        <option value="$PROJECT_DIR$/webapp/modules/project/project.js" />
+        <option value="$PROJECT_DIR$/webapp/config/config.js" />
+        <option value="$PROJECT_DIR$/webapp/modules/project/partials/detail.html" />
+        <option value="$PROJECT_DIR$/webapp/modules/project/partials/list.html" />
       </list>
     </option>
   </component>
@@ -102,6 +146,70 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Center2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Center2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Center2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Center2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Center2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Center2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Center2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Center2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -111,10 +219,35 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="fileColors" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/modules/project" />
+      <recent name="$PROJECT_DIR$/webapp/modules/index" />
+      <recent name="$PROJECT_DIR$/webapp/modules" />
+      <recent name="$PROJECT_DIR$/webapp" />
+      <recent name="$PROJECT_DIR$/public/assets" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -128,12 +261,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="826" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24982357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24982357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -209,9 +342,109 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/config/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="51" selection-start="49" selection-end="49" vertical-scroll-proportion="0.13274336">
+        <state line="7" column="20" selection-start="149" selection-end="149" vertical-scroll-proportion="0.15486726">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/projects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="20" selection-start="573" selection-end="573" vertical-scroll-proportion="0.44247788">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="46" selection-start="420" selection-end="420" vertical-scroll-proportion="0.3539823">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/libs/angular/angular.min-1.1.5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="64" selection-start="311" selection-end="311" vertical-scroll-proportion="0.3539823">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/express.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="38" selection-start="434" selection-end="434" vertical-scroll-proportion="0.28761062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/config/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="24" selection-start="243" selection-end="243" vertical-scroll-proportion="0.19911504">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/modules/index/partials/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="15" selection-start="21" selection-end="21" vertical-scroll-proportion="-0.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/modules/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="44" selection-start="136" selection-end="136" vertical-scroll-proportion="0.13274336">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/modules/project/project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="48" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="46" selection-start="167" selection-end="167" vertical-scroll-proportion="0.088495575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/modules/project/partials/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="42" selection-start="21" selection-end="21" vertical-scroll-proportion="0.04587156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/modules/project/partials/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="8" selection-start="14" selection-end="14" vertical-scroll-proportion="0.02293578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="61" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="34" selection-start="630" selection-end="630" vertical-scroll-proportion="0.3761062">
           <folding />
         </state>
       </provider>
