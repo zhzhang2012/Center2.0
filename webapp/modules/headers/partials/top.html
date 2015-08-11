@@ -1,0 +1,122 @@
+<div ng-controller="TopHeaderController">
+
+        <!--<script type="text/javascript" src="js/jquery.lavalamp.min.js"></script>-->
+        <!--<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>-->
+        <!--<script type="text/javascript" src="js/jquery.easing.compatibility.js"></script>-->
+
+    <!--&lt;!&ndash;<script language='javascript'>&ndash;&gt;-->
+        <!--&lt;!&ndash;$(document).ready(function(){&ndash;&gt;-->
+
+            <!--&lt;!&ndash;$.ajax({&ndash;&gt;-->
+                <!--&lt;!&ndash;url:"BLL_AjaxSwitch.php",&ndash;&gt;-->
+                <!--&lt;!&ndash;type:"POST",&ndash;&gt;-->
+                <!--&lt;!&ndash;data:{"action":"UserInfo","uid":uid},&ndash;&gt;-->
+                <!--&lt;!&ndash;success:function(returnJson){&ndash;&gt;-->
+                    <!--&lt;!&ndash;//alert(returnJson);&ndash;&gt;-->
+                    <!--&lt;!&ndash;$("#login").empty();&ndash;&gt;-->
+                    <!--&lt;!&ndash;var UserInfo =JSON.parse(returnJson); //´´½¨JsonµÄ¶ÔÏó&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;if(UserInfo.length > 0) //Èç¹û·µ»Ø×Ö·û´®ÓÐÄÚÈÝ£¬json¶ÔÏóµÄ³¤¶È¾Í>0&ndash;&gt;-->
+                    <!--&lt;!&ndash;{&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;$("#login").append("<div class=\"LoginImgDiv\"></div>");&ndash;&gt;-->
+                        <!--&lt;!&ndash;$("#login").append("<span class=\"Nav_UserInfo\"><a href=\"User_Page.php?uid="+uid+"\">"+UserInfo[0].UserInfo_Name+"</a></span>&nbsp;&nbsp;<a id=\"MySpaceButton\" href=\"User_MySpace.php?func=mypro&uid="+uid+"&page=1\"><b>¸öÈËÖÐÐÄ</a>");&ndash;&gt;-->
+                        <!--&lt;!&ndash;$("#login").append("|");&ndash;&gt;-->
+                        <!--&lt;!&ndash;$("#login").append("<a id=\"quitLogin\"><b>ÍË³öµÇÂ¼</a>");&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;$("#quitLogin").click(function(){&ndash;&gt;-->
+                            <!--&lt;!&ndash;$.ajax({&ndash;&gt;-->
+                                <!--&lt;!&ndash;url:"BLL_AjaxSwitch.php",&ndash;&gt;-->
+                                <!--&lt;!&ndash;type:"POST",&ndash;&gt;-->
+                                <!--&lt;!&ndash;data:{action:"SessionDestroy"},&ndash;&gt;-->
+                                <!--&lt;!&ndash;success:function(){&ndash;&gt;-->
+                                    <!--&lt;!&ndash;window.location.href = "Index.php";&ndash;&gt;-->
+                                <!--&lt;!&ndash;}&ndash;&gt;-->
+                            <!--&lt;!&ndash;});&ndash;&gt;-->
+                        <!--&lt;!&ndash;});&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;$(".LoginImgDiv").append("<img src=\"file/AvatarThumb_<?php echo $userid;?>.jpg\" class=\"LoginImg\">");&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;}&ndash;&gt;-->
+                <!--&lt;!&ndash;}&ndash;&gt;-->
+            <!--&lt;!&ndash;});&ndash;&gt;-->
+
+        <!--&lt;!&ndash;});&ndash;&gt;-->
+
+    <!--&lt;!&ndash;</script>&ndash;&gt;-->
+
+    <!--<?php-->
+	<!--}-->
+
+<!--?>-->
+
+    <!--<script type="text/javascript">-->
+
+        <!--$(document).ready(function(){-->
+
+            <!--$("#layout_navi_ul").lavaLamp({-->
+                <!--fx: "backout",-->
+                <!--speed: 800-->
+            <!--});-->
+
+            <!--$("#logo").click(function(){-->
+                <!--location.href = "Index.php";-->
+            <!--});-->
+        <!--});-->
+
+    <!--</script>-->
+
+    <div id="layout_background">
+        <div id="register_head">
+            <div id="register_frame">
+                <div id="icon"></div>
+                <div id="welcome">您好！欢迎来到北京四中！</div>
+                <div id="login">
+                    <a id="loginToolBar1" href="UserLogIn.php">登陆</a>
+                    |
+                    <a id="loginToolBar2" href="UserRegister.php">注册</a>
+                </div>
+            </div>
+        </div>
+        <div id="header">
+            <div id="layout_head">
+                <div id="logo"></div>
+                <div id="title">校友-学生活动交流平台</div>
+                <div id="title_english">Alumni-Student Communication Center for Activities</div>
+            </div>
+        </div>
+
+        <div id="layout_navi">
+            <ul id="layout_navi_ul">
+                <li>
+                    <a href="Index.php">首页</a>
+                </li>
+                <li>
+                    <a href="User_MySpace.php?func=mypro&page=1">管理项目</a>
+                </li>
+                <li>
+                    <a href="ProjectInfo_List.php?status=0&type=0&order=0&page=1">浏览项目</a>
+                </li>
+                <li>
+                    <a href="">常见问题</a>
+                </li>
+                <li>
+                    <a href="AboutUs.php">关于我们</a>
+                </li>
+            </ul>
+            <div id="searchbox">
+                <form name="form_search" action="ProjectInfo_List.php" method="GET">
+                    <div>
+                        <input id="search" name="keywords" type="text" />
+                        <input type="hidden" name="status" value="0"/>
+                        <input type="hidden" name="type" value="0"/>
+                        <input type="hidden" name="order" value="0"/>
+                        <input type="hidden" name="page" value="1"/>
+                    </div>
+                    <input id="search_btn" type="submit" value=""  />
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

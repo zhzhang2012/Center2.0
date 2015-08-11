@@ -1,3 +1,218 @@
-<div>
-    fwaefweafew
+<ng-include src="'modules/headers/partials/top.html'"></ng-include>
+
+<div ng-controller="IndexController">
+<div id="layout_news">            <!--¹«¸æÓëÁÁµã div-->
+    <div id="news_highlight">
+        <div class="slider-wrapper theme-default" style="font-family:'Î¢ÈíÑÅºÚ'; font-size:14px;">
+            <!--<div id="slider" class="nivoSlider">-->
+                <!--<img src="images/buttom_0.jpg" title="±±¾©ËÄÖÐÉãÓ°½ÚÉãÓ°×÷Æ·"/>-->
+                <!--<img src="images/buttom_1.jpg" title="±±¾©ËÄÖÐÉãÓ°½ÚÉãÓ°×÷Æ·"/>-->
+                <!--<img src="images/buttom_2.jpg" title="ÖÐÃÀ°àÄ£Äâ¹É·Ý¹«Ë¾ - Ð£Ô°¿§·ÈÌü"/>-->
+                <!--<img src="images/buttom_3.jpg" title="±±¾©ËÄÖÐµçÊÓÌ¨"/>-->
+                <!--<img src="images/buttom_4.jpg" title="±±¾©ËÄÖÐµçÊÓÌ¨"/>-->
+                <!--<img src="images/buttom_5.jpg" title="±±¾©¸ßÖÐÑÝ½²ÁªÃË"/>-->
+                <!--<img src="images/buttom_6.jpg" title="±±¾©¸ßÖÐÑÝ½²ÁªÃË"/>-->
+            <!--</div>-->
+        </div>
+
+        <!-- <div id="news_intro" class="transparent">
+                 <ul class="num1">
+                     <li >1</li>
+                     <li >2</li>
+                         <li >3</li>
+                     <li >4</li>
+                   </ul>
+           </div>-->
+
+    </div>
+    <div id="news_announce">
+        <div id="smt_count">
+            <ul>
+                <li class="indexeven">&nbsp;今日提交项目&nbsp;<span class="NewsTablet" id="NewsTablet_TodayPro"></span>
+                </li>
+                <li>&nbsp;总项目&nbsp;<span class="NewsTablet" id="NewsTablet_ProNum"></span></li>
+                <li class="indexeven">&nbsp;已得到捐款项目：&nbsp;<span class="NewsTablet"
+                                                                       id="NewsTablet_DonatePro"></span></li>
+                <li>&nbsp;已完成项目&nbsp;<span class="NewsTablet" id="NewsTablet_FinishPro"></span></li>
+            </ul>
+        </div>
+
+        <div id="nce_notice">
+            <div id="notice_hr">
+                <span>公告</span>
+            </div>
+        </div>
+    </div>
 </div>
+<!--¹«¸æÓëÁÁµã div end-->
+
+
+<div id="layout_project">
+    <div id="pjt_bar">
+        <div id="bar_pic">
+        </div>
+        <div id="bar_title">
+            学生项目状态
+        </div>
+    </div>
+    <div id="pjt_title" class="nofund">
+        <div class="arrow"></div>
+        <span id="pjt_title_font" class="nofund">&nbsp;尚未得到捐款项目</span>
+    </div>
+    <div id="pjt_title" class="withfund">
+        <div class="arrow"></div>
+        <span id="pjt_title_font" class="withfund">已得到捐款项目</span>
+    </div>
+
+
+    <div id="pjt_info">
+
+        <div id="pjt_info_NoDonate_nav" class="pjt_info_title without">
+            <ul>
+                <li><a id="nav_NoDonator" href="#pjt_info_content_NoDonator">尚无捐款人</a></li>
+                <li><a id="nav_Waiting" href="#pjt_info_content_Waiting">已认捐</a></li>
+            </ul>
+        </div>
+
+        <div id="pjt_info_NoDonate_content">
+            <div id="pjt_info_content_NoDonator">
+                <div id="pjt_info_ToolBar_NoDonator" class="pjt_info_toolbar">
+                    <ul>
+                        <li><a id="toolbar_NoDonator_Date" href="#pjt_info_content_NoDonator_Date">日期</a></li>
+                        <li><a id="toolbar_NoDonator_ClickTime" href="#pjt_info_content_NoDonator_ClickTime">点击量</a>
+                        </li>
+                        <li><a id="toolbar_NoDonator_Score" href="#pjt_info_content_NoDonator_Score">人气</a></li>
+                    </ul>
+                </div>
+                <div id="pjt_info_content_NoDonator_Date" class="pjt_info_content">
+                </div>
+                <div id="pjt_info_content_NoDonator_ClickTime" class="pjt_info_content">
+                </div>
+                <div id="pjt_info_content_NoDonator_Score" class="pjt_info_content">
+                </div>
+            </div>
+
+            <div id="pjt_info_content_Waiting">
+                <div id="pjt_info_ToolBar_Waiting" class="pjt_info_toolbar">
+                    <ul>
+                        <li><a id="toolbar_Waiting_Date" href="#pjt_info_content_Waiting_Date">日期</a></li>
+                        <li><a id="toolbar_Waiting_ClickTime" href="#pjt_info_content_Waiting_ClickTime">点击量</a></li>
+                        <li><a id="toolbar_Waiting_Score" href="#pjt_info_content_Waiting_Score">人气</a></li>
+                    </ul>
+                </div>
+                <div id="pjt_info_content_Waiting_Date" class="pjt_info_content">
+                </div>
+                <div id="pjt_info_content_Waiting_ClickTime" class="pjt_info_content">
+                </div>
+                <div id="pjt_info_content_Waiting_Score" class="pjt_info_content">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="pjt_info">
+         <div id="pjt_info_title_Waiting" class="pjt_info_title without">
+         <span>ÕýÔÚµÈºòµ½ÕÊ</span>
+         <ul>
+                  <li><a id="nav_Waiting_Date" href="#pjt_info_content_Waiting_Date">ÈÕÆÚ</a></li>
+                   <li><a id="nav_Waiting_ClickTime" href="#pjt_info_content_Waiting_ClickTime">µã»÷Á¿</a></li>
+             </ul>
+         </div>
+         <div id="pjt_info_content_Waiting_Date" class="pjt_info_content">
+         </div>
+         <div id="pjt_info_content_Waiting_ClickTime" class="pjt_info_content">
+         </div>
+     </div> -->
+    <div id="pjt_info">
+
+        <div id="pjt_info_Donate_nav" class="pjt_info_title without">
+            <ul>
+                <li><a id="nav_Operating" href="#pjt_info_content_Operating">已捐款</a></li>
+                <li><a id="nav_Finished" href="#pjt_info_content_Finished">已完成</a></li>
+            </ul>
+        </div>
+
+        <div id="pjt_info_Donate_content">
+            <div id="pjt_info_content_Operating">
+                <div id="pjt_info_ToolBar_Operating" class="pjt_info_toolbar">
+                    <ul>
+                        <li><a id="toolbar_Operating_Date" href="#pjt_info_content_Operating_Date">日期</a></li>
+                        <li><a id="toolbar_Operating_ClickTime" href="#pjt_info_content_Operating_ClickTime">点击量</a>
+                        </li>
+                        <li><a id="toolbar_Operating_Score" href="#pjt_info_content_Operating_Score">人气</a></li>
+                    </ul>
+                </div>
+                <div id="pjt_info_content_Operating_Date" class="pjt_info_content">
+                </div>
+                <div id="pjt_info_content_Operating_ClickTime" class="pjt_info_content">
+                </div>
+                <div id="pjt_info_content_Operating_Score" class="pjt_info_content">
+                </div>
+            </div>
+
+            <div id="pjt_info_content_Finished">
+                <div id="pjt_info_ToolBar_Finished" class="pjt_info_toolbar">
+                    <ul>
+                        <li><a id="toolbar_Finished_Date" href="#pjt_info_content_Finished_Date">日期</a></li>
+                        <li><a id="toolbar_Finished_ClickTime" href="#pjt_info_content_Finished_ClickTime">点击量</a>
+                        </li>
+                        <li><a id="toolbar_Finished_Score" href="#pjt_info_content_Finished_Score">人气</a></li>
+                    </ul>
+                </div>
+                <div id="pjt_info_content_Finished_Date" class="pjt_info_content">
+                </div>
+                <div id="pjt_info_content_Finished_ClickTime" class="pjt_info_content">
+                </div>
+                <div id="pjt_info_content_Finished_Score" class="pjt_info_content">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="pjt_info">
+         <div id="pjt_info_title_Finished" class="pjt_info_title with">
+         <span>ÒÑÍê³É</span>
+         <ul>
+                  <li><a id="nav_Finished_Date" href="#pjt_info_content_Finished_Date">ÈÕÆÚ</a></li>
+                   <li><a id="nav_Finished_ClickTime" href="#pjt_info_content_Finished_ClickTime">µã»÷Á¿</a></li>
+             </ul>
+         </div>
+         <div id="pjt_info_content_Finished_Date" class="pjt_info_content">
+         </div>
+         <div id="pjt_info_content_Finished_ClickTime" class="pjt_info_content">
+         </div>
+     </div>-->
+</div>
+<!--ÏîÄ¿×´Ì¬ div end-->
+
+
+<div id="layout_star">            <!--Ã÷ÐÇ¾è¿îÈË div-->
+    <div id="str_bar">
+        <div id="bar_pic">
+        </div>
+        <div id="bar_title">
+            明星捐款人
+        </div>
+    </div>
+    <div id="str_pic">
+        <ul class="slider2">
+        </ul>
+        <ul class="num2">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+
+    <div id="str_info">
+        <div id="str_info_title">
+            <span>明星捐款项目</span>
+        </div>
+        <div id="str_info_content">
+        </div>
+    </div>
+</div>
+<!--Ã÷ÐÇ¾è¿îÈË div end-->
+</div>
+
+<ng-include src="'modules/headers/partials/bottom.html'"></ng-include>
+
