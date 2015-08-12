@@ -8,3 +8,4 @@ start.sh
 .avoscloud/
 
 .DS_Store
+.idea/

@@ -18,7 +18,7 @@ module.exports = function (app) {
      */
     app.post('/project/create', Project.createProject);
     app.post('/project/update', Project.updateProject);
-    app.get('/project/:projectId', Project.getProject);
+    app.get('/project/:projectId', Project.getProjects);
 
     /**
      * Error handlers for unmatches requests.

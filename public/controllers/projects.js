@@ -30,8 +30,23 @@ exports.updateProject = function(req, res) {
 };
 
 /**
- * Get current project info.
+ * Get limited info for all existing projects.
  */
-exports.getProject = function(req, res) {
+exports.getProjects = function(req, res) {
+    var query = new AV.Query(ProjectInfo);
 
+    query.descending("createdAt");
+    // Limit to specific page and columns
+    query.skip((req.body.page - 1) * req.body.pageSize);
+    query.limit(req.body.pageSize);
+    query.select("Stu_Name_", "Project_Title_", "Project_Class_",
+                 "Project_Type_", "Project_Status_", "Project_Budget_");
+
+    query.find({
+        success: function(projects) {
+            res.status(200).json(projects);
+        }, error: function (error) {
+            res.status(500).send(error);
+        }
+    })
 };

@@ -1,3 +1,303 @@
-<div>
-    2121
+<?php
+require 'BLL_Search.php';
+
+//instantiate BLL_Search
+$BLL_Search = new BLL_Search();
+
+if (isset($_GET['keywords'])){
+
+    $keywords = $BLL_Search->KwdsManage($_GET['keywords']);
+//mysql_real_escape_string should be here after a mysql db connection is established;
+
+//echo $keywords; //test keywords' validation
+
+$box = $_GET['box'];
+}
+
+//get the box value to determine the type of ¡°ä¯ÀÀÏîÄ¿¡±
+?>
+<script type="text/javascript" src="js/plugin.js"></script>
+<script type="text/javascript">
+
+function submitForm(){
+    $("#SearchSubmit").submit();
+}
+
+var length;
+
+var page = URLGetParas("page");
+var status = URLGetParas("status");
+var type = URLGetParas("type");
+var order = URLGetParas("order");
+var kwds = "<?= $_GET['keywords']?>";
+var box = "<?= $_GET['box']?>";
+
+$(document).ready(function(){
+
+    $("#Status_"+status).addClass("OptionSelect");
+    $("#Type_"+type).addClass("OptionSelect");
+    $("#Order_"+order).addClass("OptionSelect");
+
+    $.ajax({
+        url:"BLL_AjaxSwitch.php",
+        type:"POST",
+        data:{action:"Search_Results",pagesize:"10",pagenumber:page,keywords:kwds,status:status,type:type,order:order},
+        success:function(returnJson){
+            //$('#ProjectList').empty();//ÏÈÉ¾³ý²ãÀïÃæµÄËùÓÐÄÚÈÝ
+            //$('#ProjectList').html(returnJson);
+
+            var SearchResultDisplay =JSON.parse(returnJson); //´´½¨JsonµÄ¶ÔÏó
+            length = SearchResultDisplay.length;
+
+            //create errors array to record errors
+            var errors = new Array();
+            //record the errors
+            /*if (kwds.length == 0) {
+             errors.push("ÇëÊäÈëÄúÏëËÑË÷µÄ¹Ø¼ü´Ê£¡");
+             } else*/
+            if (SearchResultDisplay == false) {
+                errors.push("Äú¹ØÓÚ¡°"+kwds+"¡±µÄËÑË÷Ã»ÓÐ½á¹û£¬Çë¸ü»»ÄúµÄ¹Ø¼ü´Ê¡£");
+            }
+
+            if(errors.length == 0) //Èç¹û·µ»Ø×Ö·û´®ÓÐÄÚÈÝ£¬json¶ÔÏóµÄ³¤¶È¾Í>0
+            {
+                $('#ProjectList').empty();//ÏÈÉ¾³ý²ãÀïÃæµÄËùÓÐÄÚÈÝ
+
+                $('#ProjectList').append("<table id=\"MainListTable\" border=\"0\" cellspacing=\"0\" style=\"border-collapse: collapse;\">");
+                $('#ProjectList').append("<thead><tr class=\"colume\"><!--top navigation bar is here!!!!!!!!!!!!!!!!!!!!!!!!!--><td class=\"statefolder\"></td><td class=\"subject\">&nbsp;±êÌâ</td><td class=\"author\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;½ð¶î</td><td style=\"width:70px;\">×´Ì¬</td></tr></thead></table>");
+                for(var i=0;i<SearchResultDisplay.length;i++) //±éÀújson¶ÔÏó¼¯ºÏ
+                {
+
+                    if(SearchResultDisplay[i].ProInfo_Status == "5"){
+                        SearchResultDisplay[i].ProInfo_Status = "ÉÐÎÞ¾è¿îÈË";
+                    }else if(SearchResultDisplay[i].ProInfo_Status == "6"){
+                        SearchResultDisplay[i].ProInfo_Status = "ÒÑÈÏ¾è";
+                    }else if(SearchResultDisplay[i].ProInfo_Status == "7"){
+                        SearchResultDisplay[i].ProInfo_Status = "ÒÑ¾è¿î";
+                    }else if(SearchResultDisplay[i].ProInfo_Status == "8"){
+                        SearchResultDisplay[i].ProInfo_Status = "ÒÑÍê³É";
+                    }
+
+                    var ListProjectId = SearchResultDisplay[i].ProInfo_Id;
+
+                    $('#ProjectList').append("<table id=\"MainListTable"+i+"\" class=\"MainListTable\">"+
+                            "<tbody class=\"project\"><tr>"+
+                            "<td class=\"statefolder\"><img id=\"Plus"+i+"\" class=\"Plus\" src=\"Images/Plus.png\" style=\"cursor: pointer;\"/></td>"+
+                            "<th class=\"subject\"><!--<th>ÎÞ·¨±»CSS±à¼­-->"+
+                    "<div class=\"ListProjectPhoto\" id=\"ListProjectPhoto"+i+"\">"+
+                            "</div>"+
+                            "<div class=\"ListProjectInfo\"><span class=\"ListProjectTitle\"><a href=\"ProjectInfo_View.php?id="+SearchResultDisplay[i].ProInfo_Id+"&page=1\">"+SearchResultDisplay[i].ProInfo_ProTitle+"</a></span>"+
+                            "<span class=\"TitleCaption\">ÏîÄ¿ÊôÐÔ£º"+SearchResultDisplay[i].ProInfo_ProClass+
+                            "&nbsp;&nbsp;&nbsp;ÏîÄ¿Àà±ð£º"+SearchResultDisplay[i].ProInfo_ProType+"</span>"+
+                            "<span class=\"TitleCaption\">ÉêÇëÈË£º"+SearchResultDisplay[i].ProInfo_StuName+"</span></div></th>"+
+                            "<td class=\"author\"><span class=\"ListProject_RMB\">£¤</span><span class=\"ListProject_money\">"+SearchResultDisplay[i].ProInfo_Budget+"</span></td>"+
+                            "<td class=\"state\">"+SearchResultDisplay[i].ProInfo_Status+"</td>"+
+                            "</tr></tbody></table>"+
+                            "<div id=\"HideHelper"+i+"\" class=\"HideHelper\">"+
+                            "<div class=\"HideProjectIntro\">"+
+                            "<span class=\"HideProjectIntro_span\">ÏîÄ¿¼ò½é:</span>"+
+                            "<div class=\"HideProjectIntro_content\">"+SearchResultDisplay[i].ProInfo_ProIntro_Short+"</div>"+
+                            "<hr size='1' width='550px'>"+
+                            "<span class=\"HideProjectIntro_span\">Ñ§Éú¼ò½é:</span>"+
+                            "<div class=\"HideProjectIntro_photo\" id=\"HideProjectIntro_photo"+i+"\">"+
+
+                            "</div>"+
+                            "<div class=\"HideProjectIntro_stucontent\">"+SearchResultDisplay[i].ProInfo_StuIntro+"</div>"+
+                            "</div>"+
+                            "<div class=\"HideProjectScore\">"+
+                            "<span class=\"HideProjectScore_Main\">ÈËÆø£º"+SearchResultDisplay[i].ProInfo_FavoriteTime+" ¶È</span>"+
+                            "<span class=\"HideProjectScore_Side\" id=\"HideProjectScore_Favor"+i+"\">ÊÕ²Ø£º</span>"+
+                            "<span class=\"HideProjectScore_Side\" id=\"HideProjectScore_Like"+i+"\">ÔÞ£º</span>"+
+                            "<span class=\"HideProjectScore_Side\">µã»÷Á¿£º"+SearchResultDisplay[i].ProInfo_ClickTime+"´Î</span>"+
+                            "</div>"+
+                        //"<td id=\"money_Hide\"><p>ËùÐè½ð¶î£º</p><p>"+SearchResultDisplay[i].ProInfo_Budget+"</p></td>"+
+                        // "<p>¾è¿î½ØÖ¹ÈÕÆÚ£º</p><p>"+SearchResultDisplay[i].ProInfo_BudgetDeadline+"</p>"+
+                    "</div>");
+
+                    $("#HideProjectIntro_photo"+i).append("<img src=\"file/AvatarThumb_"+SearchResultDisplay[i].ProInfo_Uid+".jpg\">");
+
+                    $.ajax({
+                        url:"BLL_AjaxSwitch.php",
+                        type:"POST",
+                        async:false,
+                        data:{action:"Favor_ShowPhoto",proid:ListProjectId},
+                        success:function(returnJson){
+                            var ProjectPhoto = JSON.parse(returnJson);
+
+                            if(ProjectPhoto.length > 0){
+                                $("#ListProjectPhoto"+i).append("<img class=\"FavorInfo_Img\" src=\"file/"+ProjectPhoto[0].FileUpload_FileName+"\"/>");
+                            }else{
+                                $("#ListProjectPhoto"+i).append("<span class=\"FavorInfo_NoImg\">ÔÝÎÞÍ¼Æ¬</span>");
+                            }
+
+                        }
+                    });
+
+                    $.ajax({
+                        url:"BLL_AjaxSwitch.php",
+                        type:"POST",
+                        async:false,
+                        data:{action:"Favor_Rows",proid:ListProjectId},
+                        success:function(returnRows){
+                            $("#HideProjectScore_Favor"+i).append(returnRows+"´Î");
+                        }
+                    });
+
+                    $.ajax({
+                        url:"BLL_AjaxSwitch.php",
+                        type:"POST",
+                        async:false,
+                        data:{action:"FavorLike_Rows",proid:ListProjectId},
+                        success:function(returnRows){
+                            $("#HideProjectScore_Like"+i).append(returnRows+"´Î");
+                        }
+                    });
+
+                }
+                $(".HideHelper").hide();
+
+                if ($("#MainListTable0").length!=""){
+                    $("#Plus0").attr("src","Images/Minus.png");
+                    $("#HideHelper0").slideDown();
+                }
+
+                $(".Plus").click(function(e){
+                    PlusId = e.target.id;
+                    PlusId = "#"+PlusId;
+                    HideHelperId = PlusId.replace("Plus","HideHelper");
+                    $(HideHelperId).slideToggle(function(){
+                        if($(HideHelperId).is(":hidden")){
+                            $(PlusId).attr("src","Images/Plus.png");
+                        }else{
+                            $(PlusId).attr("src","Images/Minus.png");
+                        }
+                    });
+
+                    //To restrict the number of showing boxes as one
+                    for(var k = 0; k < 10; k++){
+                        var j = Number(HideHelperId.replace("#HideHelper",""));
+                        if (k != j){
+                            k = k.toString();
+                            $("#HideHelper"+k).slideUp();
+                            $("#Plus"+k).attr("src","Images/Plus.png");
+                        }
+                    }
+                });
+
+                for(i=0;i<length;i+=2)
+                {
+                    var MainListTable = 'MainListTable'+i;
+                    $('#'+MainListTable+' > tbody > tr').addClass("listeven");
+                }
+            } else {
+                $('#ProjectList').empty();
+                var counter;
+                for (counter in errors) {//for in loop to display errors
+                    $('#ProjectList').append("<p>"+errors[counter]+"</p>");
+                    //alert(errors[counter]);
+                }
+            }
+            /**************************************************/
+        }
+    });
+
+    for(var i=0;i<=4;i++){
+        $("#Status_"+i).click(function(){
+            var NextStatus = $(this).attr("id");
+            NextStatus = NextStatus.replace("Status_","");
+
+            window.location.href="ProjectInfo_List.php?keywords="+kwds+"&status="+NextStatus+"&type="+type+"&order="+order+"&page=1";
+        });
+
+        $("#Type_"+i).click(function(){
+            var NextType = $(this).attr("id");
+            NextType = NextType.replace("Type_","");
+
+            window.location.href="ProjectInfo_List.php?keywords="+kwds+"&status="+status+"&type="+NextType+"&order="+order+"&page=1";
+        });
+    }
+
+    for(var i=0;i<=3;i++){
+        $("#Order_"+i).click(function(){
+            var NextOrder = $(this).attr("id");
+            NextOrder = NextOrder.replace("Order_","");
+
+            window.location.href="ProjectInfo_List.php?keywords="+kwds+"&status="+status+"&type="+type+"&order="+NextOrder+"&page=1";
+        });
+    }
+
+});
+
+</script>
+<div id="ProList">
+    <div id="MainList"><!--ÕâÀïÊÇÖ÷²Ëµ¥£¬È«²¿ÊÇÏîÄ¿Á´½Ó-->
+        <div class="Filter-sub" id="List_Filter-sub">
+            <ul class="path-sub" id="List_path-sub">
+                <li id="sub_index"><a href="Index.php">Ö÷Ò³</a><span></span></li>
+                <li id="sub_title"><a href="ProjectInfo_List.php?keywords=&status=0&type=0&order=0&page=1">ä¯ÀÀÏîÄ¿</a><span></span></li>
+            </ul>
+        </div>
+
+        <div id="SearchBoxArea">
+            <form action="" method="GET" id="SearchSubmit">
+                <input type="text" name="keywords" value="<?= $_GET['keywords']?>" id="SearchBox"/>
+                <input type="button" onclick="submitForm()" id="SearchSubmitButton"/>
+                <input type="hidden" name="status" value="<?= $_GET['status']?>"/>
+                <input type="hidden" name="type" value="<?= $_GET['type']?>"/>
+                <input type="hidden" name="order" value="<?= $_GET['order']?>"/>
+                <input type="hidden" name="page" value="1"/>
+            </form>
+        </div>
+        <div id="ProjectList">
+
+        </div>
+
+        <div class="List_PageNav">
+            <?php
+				$LimitOther = array("firstcount"=>($_GET['page']-1) * 3,
+            "pagesize"=>3,
+            "status"=>$_GET['status'],
+            "type"=>$_GET['type'],
+            "order"=>$_GET['order']);
+
+            $BLL_Search->BLLPageSeparate("10", $LimitOther, $keywords);
+            ?>
+        </div>
+    </div>
+    <div id="SideList"><!--ÕâÀïÊÇ±ßÀ¸£¬ÓÐÊ²Ã´¶«Î÷ÊÇ¶þÐ©¸¨Öú¹¦ÄÜ-->
+        <div id="ViewSelectOption">
+            <div class="ViewSelectOptionText">ÅÅÐò</div>
+            <div class="ViewSelectBox" id="ViewSelectBoxOrder">
+                <ul class="ViewSelectKeywords">
+                    <li id="Order_0">×îÐÂ</li>
+                    <li id="Order_1">Ô¤Ëã</li>
+                    <li id="Order_2">ÈËÆø</li>
+                    <li id="Order_3">µã»÷Á¿</li>
+                </ul>
+            </div>
+            <hr size="1" width="120px" />
+            <div class="ViewSelectOptionText">ÏîÄ¿×´Ì¬</div>
+            <div class="ViewSelectBox" id="ViewSelectBoxStatus">
+                <ul class="ViewSelectKeywords">
+                    <li id="Status_0">È«²¿</li>
+                    <li id="Status_1">ÎÞ¾è¿î</li>
+                    <li id="Status_2">ÒÑÈÏ¾è</li>
+                    <li id="Status_3">ÒÑ¾è¿î</li>
+                    <li id="Status_4">ÒÑÍê³É</li>
+                </ul>
+            </div>
+            <hr size="1" width="120px" />
+            <div class="ViewSelectOptionText">ÏîÄ¿·ÖÀà</div>
+            <div class="ViewSelectBox" id="ViewSelectBoxType">
+                <ul class="ViewSelectKeywords">
+                    <li id="Type_0">È«²¿Ñ§¿Æ</li>
+                    <li id="Type_1">×ÔÈ»¿ÆÑ§</li>
+                    <li id="Type_2">ÈËÎÄÉç¿Æ</li>
+                    <li id="Type_3">Ð£Ô°Éú»î</li>
+                    <li id="Type_4">ÎÄÑ§ÀúÊ·</li>
+                    <li id="Type_5">·¢Ã÷´´Ôì</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
