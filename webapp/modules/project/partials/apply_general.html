@@ -1,0 +1,196 @@
+<ng-include src="'modules/headers/partials/top.html'"></ng-include>
+
+<div id="layout_apply">
+    <div id="apply_content">
+
+            <span class="ApplyStep_Info">
+                <img src="Images/decorate_left.png" width="30px" height="10px">&nbsp;完善项目信息&nbsp;<img
+                    src="Images/decorate_right.png" width="30px" height="10px">
+            </span>
+
+        <!--项目名称-->
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                项目名称
+            </label>
+
+            <div class="info_frame">
+                <input name="ProTitle" type="text" id="ProTitle_Input" class="info_ipt"
+                       ng-model="projectInfoData.Project_Title_" placeholder="少于25个字"/>
+
+                <div id="ProTitle_Alert" class="alert">{{ ProTitle_Alert }}</div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+        <!--项目属性-->
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                项目属性
+            </label>
+
+            <div class="info_frame" style="margin-top:5px;">
+                <input type="radio" ng-model="projectInfoData.Project_Class_"
+                       name="ProClass" value="个人项目"/>个人项目
+                <input type="radio" ng-model="projectInfoData.Project_Class_"
+                       name="ProClass" value="社团项目"/>社团项目
+                <div id="ProClass_Alert" class="alert"></div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+        <!--项目类别-->
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                项目类别
+            </label>
+
+            <div class="info_frame" style="margin-top:5px;">
+                <input type="radio" ng-model="projectInfoData.Project_Type_"
+                       name="ProType" value="自然科学"/>自然科学
+                <input type="radio" ng-model="projectInfoData.Project_Type_"
+                       name="ProType" value="人文社科"/>人文社科
+                <input type="radio" ng-model="projectInfoData.Project_Type_"
+                       name="ProType" value="校园生活"/>校园生活
+                <input type="radio" ng-model="projectInfoData.Project_Type_"
+                       name="ProType" value="文学历史"/>文学历史
+                <input type="radio" ng-model="projectInfoData.Project_Type_"
+                       name="ProType" value="发明创造"/>发明创造
+                <div id="ProType_Alert" class="alert"></div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+        <!--申请人-->
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                申请人
+            </label>
+
+            <div class="info_frame">
+                <input name="StuName" type="text" id="StuName_Input" class="info_ipt"
+                       ng-model="projectInfoData.Stu_Name_" placeholder="输入项目申请人姓名或社团名称"/>
+
+                <div id="StuName_Alert" class="alert"></div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+        <!--申请人简介-->
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                申请人简介
+            </label>
+
+            <div class="info_frame">
+                <textarea name="StuIntro" id="StuIntro_Input" class="pjt_intro" wrap="virtual"
+                          style="height:40px"
+                          ng-model="projectInfoData.Stu_Info_"
+                          ng-keypress="stuIntroCheckWord()"
+                          placeholder="输入申请人的简介"></textarea>
+
+                <div id="StuIntro_Alert" class="alert" style="margin-left:0px;"></div>
+                <div id="StuIntro_WordAlert" class="Apply_WordAlert">您最多可以输入50字，您还可以输入&nbsp;{{ stuIntroWordsLeft }}&nbsp;字
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+        <!--项目详细介绍-->
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                项目详细介绍
+            </label>
+
+            <div class="info_frame">
+                <textarea name="ProIntro_Long" id="ProIntro_Long_Input" class="pjt_intro"
+                          wrap="virtual" style="height:400px;"
+                          ng-model="projectInfoData.Project_Intro_"
+                          placeholder="输入项目详细介绍与说明"></textarea>
+
+                <div id="ProIntro_Long_Alert" class="alert"></div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+        <!--项目计划-->
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                项目计划
+            </label>
+
+            <div class="info_frame">
+                <textarea name="ProPlan" id="ProPlan_Input" class="pjt_intro" wrap="virtual"
+                          style="height:400px"
+                          ng-model="projectInfoData.Project_Plan_"
+                          placeholder="输入项目开展计划"></textarea>
+
+                <div id="ProPlan_Alert" class="alert"></div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+        <!--项目目标-->
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                项目目标
+            </label>
+
+            <div class="info_frame">
+                <textarea name="ProGoal" id="ProGoal_Input" class="pjt_intro" wrap="virtual"
+                          style="height:400px"
+                          ng-model="projectInfoData.Project_Goal_"
+                          placeholder="输入项目完成后预期的成果"></textarea>
+
+                <div id="ProGoal_Alert" class="alert"></div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+            <span class="ApplyStep_Info">
+                <img src="Images/decorate_left.png" width="30px" height="10px">&nbsp;上传项目图片&nbsp;<img
+                    src="Images/decorate_right.png" width="30px" height="10px">
+            </span>
+
+        <div class="info_frame" style="padding-left:75px;">
+            <div id="Apply_UploadPhoto">
+                <form id="form1" action="FileUpload_swfupload.php" method="post"
+                      enctype="multipart/form-data">
+                    <div id="Apply_UploadPhoto_Info">
+                        <p>点击“浏览”按钮，选择您要上传的图片</p>
+
+                        <p>请勿上传包含中文文件名的文件！</p>
+                    </div>
+                    <div class="fieldset flash" id="fsUploadProgress">
+                        <span class="legend">快速上传</span>
+                    </div>
+                    <div id="divStatus">0 个文件已上传</div>
+                    <div>
+                        <span id="spanButtonPlaceHolder"></span>
+                        <input id="btnCancel" type="button" value="取消所有上传"
+                               onclick="swfu.cancelQueue();" disabled="disabled"
+                               style="margin-left: 2px; font-size: 8pt; height: 29px;"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <hr size="1" width="600px" color="#d0d0d0">
+
+        <div id="ApplyStep1_submit">
+            <input type="hidden" id="ProjectId" name="ProjectId" value=""/>
+            <button id="submit" name="submit" class="pjt_next" ng-click="submitProjectInfo()">保 存</button>
+        </div>
+
+    </div>
+</div>
+
+<ng-include src="'modules/headers/partials/bottom.html'"></ng-include>

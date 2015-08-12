@@ -15,4 +15,19 @@ angular.module('Center').config(['$routeProvider',
                 templateUrl: "modules/project/partials/detail.html",
                 controller: "ProjectDetailController"
             })
+            .when('/projects/apply/1', {
+                templateUrl: "modules/project/partials/apply_general.html",
+                controller: "ProjectApplyController_Intro"
+            })
+            .when('/project/apply/2', {
+                templateUrl: "modules/project/partials/apply_budgets.html",
+                controller: "ProjectApplyController_Budgets"
+            })
+            .when('/project/apply/3', {
+                templateUrl: "modules/project/partials/apply_preview.html",
+                controller: "ProjectApplyController_Preview"
+            })
+            .otherwise({
+                redirectTo: '/'
+            })
     }]);

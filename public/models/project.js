@@ -1,7 +1,7 @@
 /**
- * Initialize a project object
+ * Schema for a project object
  */
-exports.schema = function (Data) {
+module.exports = function (Data) {
     // Private data members
     this.Stu_Name_ = Data.Stu_Name_;
     this.Stu_Info_ = Data.Stu_Info_;

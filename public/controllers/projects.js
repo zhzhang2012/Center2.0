@@ -10,8 +10,8 @@ var ProjectInfo = AV.Object.extend("Project_Info_");
  * Create a project.
  */
 exports.createProject = function(req, res) {
-    var projectInfo = ProjectInfo();
-    var newProject = new Project.schema(req.body);
+    var projectInfo = new ProjectInfo();
+    var newProject = new Project(req.body);
 
     projectInfo.save(newProject, {
         success: function() {
