@@ -4,7 +4,8 @@ module.exports = function (app) {
     /**
      * Module dependencies.
      */
-    var Project = require('../public/controllers/projects');
+    var Project = require('../public/controllers/projects'),
+        Comment = require('../public/controllers/comments');
 
     /**
      * Main page loading.
@@ -24,7 +25,13 @@ module.exports = function (app) {
     app.get('/projects/:pid', Project.getProject);
 
     /**
-     * Error handlers for unmatches requests.
+     * Comments related routes.
+     */
+    app.post('/comment', Comment.createComment);
+    app.get('/comments/:pid', Comment.getComments);
+
+    /**
+     * Error handlers for unmatched requests.
      */
     app.get('/', function(req, res) {
         console.log("404 Not Found!");

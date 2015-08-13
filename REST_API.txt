@@ -5,3 +5,8 @@ POST /project/budgets
 
 GET /projects
 GET /projects/:projectId
+
+# Create new comment
+POST /comment
+# Get a list of comments
+GET /comments/:pid

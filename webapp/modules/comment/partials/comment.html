@@ -9,15 +9,18 @@
         </ul>
         <a id="CommentNav_Create" href="#CommentCreate">写新留言</a>
     </div>
-    <div id="CommentList">
+    <div id="CommentList" ng-repeat="comment in comments">
         <div id="CommentList_Date">
-
+            <span ng-show="showReply(comment.Reply_To_)">回复 {{ comment.Reply_To_ }}:</span>
+            {{ comment.Content_ }}
         </div>
         <div id="CommentList_Like">
 
         </div>
         <div class="CommentPage">
+            {{ comment.createdAt }}
         </div>
+        <button ng-click="replyComment(comment.Creator_)">回复</button>
     </div>
     <div id="CommentCreate">
         <span id="CommentCreate_span">发表我的留言</span>
@@ -26,18 +29,18 @@
             <span>留言内容：</span><span id="wordsleft">请使用文明语言，您还可以输入 <span
                 id="NewComment_WordCount">200</span> 字</span><br>
 
-            <form id="CommentCreate_form">
-                <textarea name="NewComment" id="NewComment" cols="86" rows="5" maxlength="200"
-                          onkeydown="CheckWord('NewComment','NewComment_WordCount')"
-                          onkeyup="CheckWord('NewComment','NewComment_WordCount')"></textarea>
-                <span>验证码：</span>
-                <input type="text" id="RanCoInp" width="20px"/>
-                <!--input type="hidden" name="RanCoHol" id="RanCoHol"/-->
-                <span id="VeriImg"><img id="VeriCoHol"/></span>
-                <input type="button" name="VeriCoRefr" id="VeriCoRefr" value="看不清，换一张"/>
-                <span id="AlertVeriFalse"></span>
-                <input type="button" name="CommentCreate_button" id="CommentCreate_button"
-                       value="发 表"/>
+            <textarea name="NewComment" id="NewComment" cols="86" rows="5" maxlength="200"
+                      onkeydown="CheckWord('NewComment','NewComment_WordCount')"
+                      onkeyup="CheckWord('NewComment','NewComment_WordCount')"
+                      ng-model="commentData.Content_"
+                      placeholder="{{ replyReminder }}"></textarea>
+            <span>验证码：</span>
+            <input type="text" id="RanCoInp" width="20px"/>
+            <!--input type="hidden" name="RanCoHol" id="RanCoHol"/-->
+            <span id="VeriImg"><img id="VeriCoHol"/></span>
+            <input type="button" name="VeriCoRefr" id="VeriCoRefr" value="看不清，换一张"/>
+            <span id="AlertVeriFalse"></span>
+            <button id="CommentCreate_button" ng-click="submitComment()">发 表</button>
         </div>
     </div>
 </div>
