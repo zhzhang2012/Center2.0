@@ -21,8 +21,8 @@ module.exports = function (app) {
     app.post('/project/update', Project.updateProject);
     app.post('/project/budgets', Project.appendBudgets);
 
-    app.get('/projects', Project.getProjects);
-    app.get('/projects/:pid', Project.getProject);
+    app.get('/projects/:page', Project.getProjects);
+    app.get('/project/:pid', Project.getProject);
 
     /**
      * Comments related routes.

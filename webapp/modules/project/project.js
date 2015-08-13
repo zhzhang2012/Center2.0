@@ -1,19 +1,43 @@
 'use strict';
 
 angular.module('Center.project.controller', [])
-    .controller('ProjectListController', ['$scope', '$http', function ($scope, $http) {
+    .controller('ProjectListController', ['$scope', '$http', '$routeParams', '$location', function ($scope, $http, $routeParams, $location) {
+        // TODO: Pop up a loading image when loading resources, and use promise to notify when all resources finish loading
+        $http.get('/projects/' + $routeParams.page)
+            .success(function (projects) {
+                $scope.projects = projects;
+            })
+            .error(function (err) {
+            // TODO: Pop up error message
+            console.log(err);
+        });
 
+        $scope.movePage = function(indicator) {
+            var PAGE_SIZE = 5;
+            if ((indicator == -1 && $routeParams.pid > 1) ||
+                (indicator == 1 && $scope.projects.length == PAGE_SIZE))
+                $location.path('/projects/' + (parseInt($routeParams.page) + indicator));
+            // TODO: disable the buttons otherwise
+        };
+        $scope.goto = function() {
+            // TODO: limit the pages that can goto
+            $location.path('/projects/' + $scope.gotoPage);
+        };
+
+        $scope.viewProject = function (pid) {
+            $location.path('/project/' + pid);
+        };
     }])
     .controller('ProjectDetailController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
         // TODO: Pop up a loading image when loading resources, and use promise to notify when all resources finish loading
-        $http.get('/projects/' + $routeParams.pid)
-            .success(function(project) {
+        $http.get('/project/' + $routeParams.pid)
+            .success(function (project) {
                 $scope.projectData = project;
             })
-            .error (function(err) {
-                // TODO: Pop up error message
-                console.log(err);
-            });
+            .error(function (err) {
+            // TODO: Pop up error message
+            console.log(err);
+        });
     }])
     .controller('ProjectApplyController_Intro', ['$scope', '$http', '$location', function ($scope, $http, $location) {
         $scope.projectInfoData = {
@@ -165,7 +189,7 @@ angular.module('Center.project.controller', [])
                     })
                         .success(function (id) {
                             // TODO: Probably a loading gif here
-                            $location.path('/projects/' + id);
+                            $location.path('/project/' + id);
                         })
                         .error(function (msg) {
                             console.log(msg);

@@ -10,11 +10,11 @@ angular.module('Center').config(['$routeProvider',
                 templateUrl: "modules/index/partials/index.html",
                 controller: "IndexController"
             })
-            .when('/projects', {
+            .when('/projects/:page', {
                 templateUrl: "modules/project/partials/list.html",
                 controller: "ProjectListController"
             })
-            .when('/projects/:pid', {
+            .when('/project/:pid', {
                 templateUrl: "modules/project/partials/detail.html",
                 controller: "ProjectDetailController"
             })

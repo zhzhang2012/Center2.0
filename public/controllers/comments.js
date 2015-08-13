@@ -28,7 +28,7 @@ exports.createComment = function (req, res) {
 exports.getComments = function (req, res) {
     var query = new AV.Query(ProjectComment);
     query.descending("createdAt");
-    query.equalTo("Project_Id_", req.body.pid);
+    query.equalTo("Project_Id_", req.params.pid);
 
     query.find({
         success: function (comments) {

@@ -34,11 +34,12 @@ exports.updateProject = function (req, res) {
  */
 exports.getProjects = function (req, res) {
     var query = new AV.Query(ProjectInfo);
+    var PAGE_SIZE = 5;
 
     query.descending("createdAt");
     // Limit to specific page and columns
-    query.skip((req.body.page - 1) * req.body.pageSize);
-    query.limit(req.body.pageSize);
+    query.skip((req.params.page - 1) * PAGE_SIZE);
+    query.limit(PAGE_SIZE);
     query.select("Stu_Name_", "Project_Title_", "Project_Class_",
         "Project_Type_", "Project_Status_", "Project_Budget_");
 
