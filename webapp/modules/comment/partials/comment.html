@@ -1,0 +1,43 @@
+<div id="Comment" ng-controller="CommentController">
+    <div id="CommentTitle">
+        <span id="CommentTitle_span">用户留言</span>
+    </div>
+    <div id="CommentNav">
+        <ul>
+            <li><a id="OrderByDate" href="#CommentList_Date">最新留言</a></li>
+            <li><a id="OrderByLike" href="#CommentList_Like">最热门留言</a></li>
+        </ul>
+        <a id="CommentNav_Create" href="#CommentCreate">写新留言</a>
+    </div>
+    <div id="CommentList">
+        <div id="CommentList_Date">
+
+        </div>
+        <div id="CommentList_Like">
+
+        </div>
+        <div class="CommentPage">
+        </div>
+    </div>
+    <div id="CommentCreate">
+        <span id="CommentCreate_span">发表我的留言</span>
+
+        <div id="CommentCreate_content">
+            <span>留言内容：</span><span id="wordsleft">请使用文明语言，您还可以输入 <span
+                id="NewComment_WordCount">200</span> 字</span><br>
+
+            <form id="CommentCreate_form">
+                <textarea name="NewComment" id="NewComment" cols="86" rows="5" maxlength="200"
+                          onkeydown="CheckWord('NewComment','NewComment_WordCount')"
+                          onkeyup="CheckWord('NewComment','NewComment_WordCount')"></textarea>
+                <span>验证码：</span>
+                <input type="text" id="RanCoInp" width="20px"/>
+                <!--input type="hidden" name="RanCoHol" id="RanCoHol"/-->
+                <span id="VeriImg"><img id="VeriCoHol"/></span>
+                <input type="button" name="VeriCoRefr" id="VeriCoRefr" value="看不清，换一张"/>
+                <span id="AlertVeriFalse"></span>
+                <input type="button" name="CommentCreate_button" id="CommentCreate_button"
+                       value="发 表"/>
+        </div>
+    </div>
+</div>

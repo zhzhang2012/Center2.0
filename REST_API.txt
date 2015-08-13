@@ -1,4 +1,7 @@
-# ProjectInfo CRUD
+# Project CRUD
 POST /project/create
 POST /project/update
-GET /project/:projectId
+POST /project/budgets
+
+GET /projects
+GET /projects/:projectId

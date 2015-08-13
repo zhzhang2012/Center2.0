@@ -1,0 +1,1423 @@
+/*
+今天css改动计划：
+三级页面修改：
+项目系统信息的移位
+前去捐款按钮的重新设计
+放图片和表格的位置
+二级页面的配色问题
+*/
+
+/*
+there might be the style for head and foot coming from Dan.
+*/
+
+body
+{
+    /*background-image: url("../Images/rainbowBack.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;*/
+}
+
+#ProList
+{
+    width: 960px;
+    height: auto;
+    overflow:hidden;
+}
+
+/*MainList starts here************************************/
+#MainList
+{
+    width: 765px;
+    height: auto;
+    float: left;
+    padding-left:5px;
+}
+
+.ProToolBar{
+	width:660px;
+	height:30px;
+}
+
+#ProToolBar_ApplyDate{
+	float:left;
+	font-size:12.5px;
+	color:#a0a0a0;
+	margin-left:30px;
+}
+
+#ProToolBar_Tool{
+	margin-left:100px;
+}
+
+#ProToolBar_Tool a{
+	cursor:pointer;
+	color:#750000;
+	font-size:13px;
+	font-weight:bold;
+}
+
+#ProToolBar_Tool a:hover{
+	text-decoration:underline;
+}
+
+.ProLikeImg{
+	margin-bottom:-5px;
+}
+
+#ProToolBar_FavorSpan{
+	border-style:solid;
+	border-color:#750000;
+	border-width:0 0 0 3px;
+	width:100px;
+	display:block;
+	line-height:17px;
+	float:left;
+	text-align:left;
+	padding-left:6px;
+	margin-top:5px;
+	margin-left:260px;
+}
+
+
+.HasFavored{
+	color:#750000;
+	font-size:13px;
+	font-weight:bold;
+}
+
+.ProToolBar_LikeDiv{
+	float:left;
+}
+
+.ProToolBar_FavorTime, .ProToolBar_LikeTime{
+	font-size:12px;
+	color:#858585;
+}
+
+.Filter
+{
+    width: 754px;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 30px;
+    background-color: #eaebed;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 1px #888;
+    -webkit-box-shadow: 0 0 2px 1px #888;
+    float:left;
+
+}
+
+.Filter li
+{
+    list-style: none;
+}
+
+.Filter .path li
+{
+    float: left;
+}
+
+.Filter .path li a
+{
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+}
+
+.Filter .filter li
+{
+    float: right;
+
+}
+
+.Filter .filter li a
+{
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 30px;
+}
+
+.Filter .navigation li
+{
+    float: left;
+
+}
+
+.Filter .navigation li a
+{
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 30px;
+}
+
+.Filter .navigation input
+{
+    width: 30px;
+}
+
+#ProjectList
+{
+    width: 754px;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 5px;
+    background-image: url("../Images/Linen.jpg");
+    border-radius: 10px;
+    box-shadow: 0 0 2px 1px #888;
+    -webkit-box-shadow: 0 0 2px 1px #888;
+    float:left;
+}
+
+#ProjectList p
+{
+    font: 15px;
+    text-align: center;
+    color: white;
+}
+
+#SearchBoxArea
+{
+    height: 30px;
+    width: 734px;
+    float: left;
+    margin: 20px auto 0 10px;
+}
+
+    #SearchBox
+    {
+	height: 30px;
+	width: 500px;
+	border: 1px solid #d0d0d0;
+	border-right-width: 0;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	font-size: 15px;
+	outline: none;
+	float: left;
+    }
+    #SearchBox:hover
+    {
+	-webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+	-moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+	box-shadow: inset 2px 2px 2px 0px #dddddd;
+    }
+    #SearchBox:focus
+    {
+	-webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+	-moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+	box-shadow: inset 2px 2px 2px 0px #dddddd;
+    }
+
+
+    #SearchSubmitButton
+    {
+	height: 34px;
+	width: 50px;
+	cursor: pointer;
+	border: 1px solid #d0d0d0;
+	border-left-width: 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: #750000;
+	background-image: url("../Images/SearchIcon.png");
+	background-repeat: no-repeat;
+	background-size: 31px;
+	float: left;
+    }
+    #SearchSubmitButton:hover
+    {
+	background-color: #8A132D;
+    }
+
+#MainList table
+{
+    width: 734px;
+    height: auto;
+    margin: 0 auto 0 auto;
+    background-color: #F2F2F2;
+}
+
+/*#MainList .project
+{
+    height: 30px;
+}
+
+/*#MainList .project a
+{
+    line-height: 30px;
+    color: black;
+}*/
+
+#MainList .statefolder
+{
+    width: 50px;
+    height: auto;
+    text-align: center;
+}
+
+#MainList .subject
+{
+    width: 500px;
+    height: auto;
+    text-align: left;
+}
+
+#MainList .subject .TitleCaption
+{
+	display:block;
+	float:left;
+	font-weight:normal;
+    font-size: 12px;
+    line-height: 0;
+    margin-left:5px;
+    color:#666;
+    line-height:23px;
+    width:400px;
+}
+
+#MainList .author
+{
+    width: 150px;
+    height: auto;
+    text-align: center;
+}
+
+#MainList .state
+{
+    width: 100px;
+    height: auto;
+    text-align: center;
+    font-family:"微软雅黑";
+	font-size:13px;
+	color:#750000;
+}
+
+#MainList .HideHelper
+{
+    height: auto;
+}
+
+#MainList .HideHelper table
+{
+    background-image: url("../Images/Linen.jpg");
+    color: white;
+    height: auto;
+    border-style: none;
+    border-width: 0;
+}
+
+#MainList #statefolder_Hide
+{
+    width: 50px;
+}
+
+#MainList #p_Hide
+{
+    width: 500px;
+}
+
+#MainList #p_Hide p
+{
+    padding: 0 15px 0 15px;
+}
+
+#MainList #money_Hide
+{
+    width: 150px;
+    text-align: center;
+}
+
+#MainList #budgetDate_Hide
+{
+    width: 100px;
+    text-align: center;
+}
+
+#MainList tbody
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#MainList td
+{
+    border-style: none;
+}
+
+#MainList th
+{
+    border-style: none;
+}
+
+#MainList #ProjectList .colume td
+{
+    height: 30px;
+    background-color: white;
+    background-repeat: repeat-x;
+    text-align: left;
+    border-style: none;
+    font-family:"微软雅黑";
+}
+
+.ListProjectPhoto{
+	width:80px;
+	padding:2px;
+	background-color:#FFF;
+	border:1px solid #d0d0d0;
+	float:left;
+	margin-left:5px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.ListProjectTitle{
+	display:block;
+	float:left;
+	margin-left:5px;
+	width:370px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	margin-top:5px;
+}
+
+.ListProjectTitle a{
+	color:#750000;
+	font-size:15px;
+}
+
+.ListProjectTitle a:hover{
+	text-decoration:underline;
+}
+
+.ListProjectInfo{
+	float:left;
+	width:360px;
+	margin-left:5px;
+}
+
+.ListProject_money{
+	font-weight:bold;
+	font-size:15px;
+	color:#4D0000;
+}
+
+.ListProject_RMB{
+	color:#666;
+	font-size:12px;
+}
+
+.HideProjectIntro{
+	float:left;
+	margin-left:40px;
+	margin-top:10px;
+	color:#FFF;
+	width:590px;
+}
+
+.HideProjectIntro_span{
+	font-weight:bold;
+	color:#F0F0F0;
+	border-width:0 0 1px 0;
+	border-color:#F0F0F0;
+	border-style:solid;
+	display:block;
+	width:100px;
+	font-size:13px;
+}
+
+.HideProjectIntro_content{
+	text-indent:2em;
+	margin-top:8px;
+	margin-bottom:15px;
+	font-family:"微软雅黑";
+	font-size:12.5px;
+	width:550px;
+	float:left;
+}
+
+.HideProjectIntro_stucontent{
+	text-indent:2em;
+	margin-top:8px;
+	margin-bottom:15px;
+	font-family:"微软雅黑";
+	font-size:12.5px;
+	width:490px;
+	float:left;
+	margin-left:10px;
+}
+
+.HideProjectIntro_photo{
+	float:left;
+	padding:2px;
+	border:1px solid #a0a0a0;
+	background-color:#FFF;
+	width:50px;
+	height:50px;
+	margin-top:10px;
+	margin-bottom:15px;
+}
+
+.HideProjectIntro_photo img{
+	max-width:50px;
+	max-height:50px;
+}
+
+.List_PageNav{
+	float:left;
+	background-color:#f0f0f0;
+	border:1px solid #d0d0d0;
+	font-size:13px;
+	line-height:30px;
+	width:760px;
+	height:30px;
+	margin-top:20px;
+	text-align:center;
+}
+
+.HideProjectScore{
+	float:left;
+	margin-top:20px;
+	width:103px;
+	background-color:#f0f0f0;
+	border-radius:4px;
+	box-shadow:0 2px 4px 1px #333;
+}
+
+.HideProjectScore_Main{
+	display:block;
+	font-size:13px;
+	font-weight:bold;
+	color:#750000;
+	margin-left:10px;
+	text-align:center;
+	margin-top:7px;
+	border-style:solid;
+	border-width:0 0 2px 0;
+	border-color:#750000;
+	width:83px;
+	margin-bottom:10px;
+}
+
+.HideProjectScore_Side{
+	display:block;
+	font-size:12px;
+	color:#555;
+	margin-left:10px;
+	height:20px;
+}
+
+/*SideList starts here********************************/
+#SideList
+{
+    width: 165px;
+    height: 600px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 30px;
+    /*background-color: #AFEBA8;*/
+    background-color: #F7F7F7;
+    border-radius: 5px;
+    border:1px solid #d0d0d0;
+}
+
+    #ViewSelectOption
+    {
+	width: 140px;
+	height: auto;
+	margin: 10px auto;
+	background-color: transparent;
+    }
+
+	.ViewSelectOptionText
+	{
+	    width: 140px;
+	    height: auto;
+	    font-size: 13px;
+	    color: #750000;
+	}
+
+	.ViewSelectBox
+	{
+	    width: 140px;
+	    margin: 10px 0;
+	}
+	#ViewSelectBoxOrder
+	{
+	    height: 60px;
+	}
+	#ViewSelectBoxStatus
+	{
+	    height: 90px;
+	}
+	#ViewSelectBoxType
+	{
+	    height: 90px;
+	}
+
+	    .ViewSelectKeywords
+	    {
+	        font-size: 13px;
+		line-height: 24px;
+	    }
+
+		.ViewSelectKeywords li
+		{
+		    float: left;
+		    margin: 3px 2px;
+		    padding: 0 5px;
+		}
+
+		.ViewSelectKeywords .OptionSelect{
+		    color: #FFFFFF;
+		    background-color: #750000;
+		    font-size:13px;
+		}
+
+		.ViewSelectKeywords li:hover
+		{
+		    color: white;
+		    background-color: #750000;
+		    cursor: pointer;
+		}
+
+/***********************************************************************************************************************/
+
+#ProjectPhoto{
+	margin-top:20px;
+	padding-bottom:20px;
+	margin-bottom:40px;
+}
+
+#galleria{
+	height:400px;
+}
+
+/**************************************ProView Starts Here!*************************************************************/
+
+#ProView
+{
+    width: 960px;
+    height: auto;
+    overflow:hidden;
+}
+
+#List_Filter-sub{
+	width:760px;
+	border-width:0 0 2px 0;
+	border-color:#750000;
+	border-style:solid;
+	overflow:hidden;
+	float:left;
+}
+
+.Filter-sub .TitleHelper
+{
+    margin: 0;
+    padding: 0;
+    margin-left: 6px;
+    width: 930px;
+    height: 2px;
+    background-color: /*#BB5E00*/#930000;
+    float: left;
+}
+
+.Filter-sub .path-sub
+{
+    width: 100%;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 30px;
+    float: left;
+    border-width: 0 0 2px 0;
+    border-color: white white #AE0000 white;
+    /*background-color: /*#540000;*/
+}
+
+#List_path-sub
+{
+    margin-left:0px;
+}
+
+.Filter-sub .path-sub li
+{
+    float: left;
+    list-style: none;
+    margin-right: -10px;
+}
+
+#sub_index
+{
+	background-image:url("../Images/subnav1.png");
+	height:31px;
+	width:123px;
+}
+
+#sub_unfinish
+{
+	background-image:url("../Images/subnav3.png");
+	background-repeat:repeat;
+	height:31px;
+	width:112px;
+}
+
+.Filter-sub .path-sub #sub_title
+{
+	background-image:url("../Images/subnav2.png");
+	height:31px;
+	width:94px;
+	color:white;
+}
+
+
+.Filter-sub .path-sub li a
+{
+	font-size:13px;
+	font-family:"微软雅黑";
+    line-height: 30px;
+    padding-left: 20px;
+    padding-right: 10px;
+    color:black;
+}
+
+#GoAndMoney
+{
+    width: 90px;
+    height: 50px;
+    margin-left: 850px;
+    margin-top: 82px;
+    float: right;
+    position: absolute;
+    background-color: /*#eaebed   #FF8040*/ #750000;
+    /*border-radius: 10px;*/
+    box-shadow: 0 1px 2px 1px #888;
+    -webkit-box-shadow: 0 1px 2px 1px #888;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size:15px;
+}
+
+#GoAndMoney a span
+{
+    color: white;
+    line-height: 50px;
+    margin: 10px auto 0 auto;
+}
+
+#GoAndPhoto
+{
+    width: 121px;
+    height: 50px;
+    margin-left: 320px;
+    margin-top: 82px;
+    float: right;
+    position: absolute;
+    background-color: /*#eaebed*/#e0e0e0;
+    box-shadow: 0 1px 2px 1px #888;
+    -webkit-box-shadow: 0 1px 2px 1px #888;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size:15px;
+}
+
+#GoAndPhoto a span
+{
+    color: black;
+    line-height: 50px;
+    margin: 10px auto 0 auto;
+}
+
+#GoAndProSys
+{
+    width: 161px;
+    height: 50px;
+    margin-left: 770px;
+    margin-top: 82px;
+    float: right;
+    position: absolute;
+    background-color: /*#eaebed   #0080FF*/ #750000;
+    box-shadow: 0 1px 2px 1px #888;
+    -webkit-box-shadow: 0 1px 2px 1px #888;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size:15px;
+}
+
+#GoAndProSys a span
+{
+    color: white;
+    line-height: 50px;
+    margin: 10px auto 0 auto;
+}
+
+.floor
+{
+    width: 100%;
+    float: left;
+    border-collapse:collapse;
+}
+
+/*MainBar starts here*********************************/
+.floor-right
+{
+    width: 680px;
+    height: 900px;
+    /*background-color: #AFEBA8;*/
+}
+
+.Outside{
+	min-height:648px;
+}
+
+.MainBar
+{
+	font-family:"微软雅黑";
+    height: auto;
+    background-color: white;
+    margin-top: 20px;
+    border-top-right-radius: 5px;
+    border-style:solid;
+    border-color:#a0a0a0;
+    border-width:1px 1px 0 1px;
+    /*-webkit-box-shadow: 0 0 2px 1px #888;
+    box-shadow: 0 0 2px 1px #888;*/
+    padding-left:20px;
+    padding-right:20px;
+    width:630px;
+    min-height:648px;
+    overflow:hidden;
+}
+
+.MainBar div
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.MainBar div p
+{
+    margin: 20px 30px;
+    text-indent:2em;
+}
+
+.MainBar #Title
+{
+    text-align: center;
+    background-color: white;
+    padding: 70px 0 0 0;
+}
+
+.MainBar #Title .TitleHelper
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 2px;
+    background-color: /*#AE0000*/#930000;
+    margin-bottom: 3px;
+    float:left;
+}
+
+#ProToolBar_Class{
+	float: left;
+	width: 670px;
+	text-align: left;
+	font-size: 12.5px;
+	margin-left: 30px;
+	line-height: 15px;
+	color: #A0A0A0;
+	margin-top: 5px;
+}
+
+
+.MainBar .Passage
+{
+
+    text-align: left;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-top: -2px;
+    line-height:23px;
+    font-size:14px;
+    border-width:0 1px 1px 1px;
+    border-color:#d0d0d0;
+    border-style:solid;
+    float:left;
+    width:625px;
+    margin-left:2px;
+}
+
+#ProBudget{
+	float:left;
+	margin-bottom:20px;
+}
+
+#ProBudget_table{
+	border-style:solid;
+	border-color:#d0d0d0;
+	border-width:1px;
+	border-collapse:collapse;
+}
+
+#ProBudget_table th{
+	background-color:#f0f0f0;
+	border-style:solid;
+	border-color:#d0d0d0;
+	border-width: 0 1px 1px 0;
+	border-collapse:collapse;
+	margin-bottom:10px;
+	height:35px;
+	color:#750000;
+	font-size:13px;
+}
+
+#ProBudget_table td{
+	/*width:100px;
+	line-height:20px;
+	padding-bottom:15px;
+	padding-top:15px;*/
+	font-size:12.5px;
+	border-style:solid;
+	border-color:#d0d0d0;
+	border-width: 0 1px 1px 0;
+	border-collapse:collapse;
+	text-align:center;
+}
+
+#ProRemark{
+	margin-top:10px;
+	margin-bottom:20px;
+	border:1px solid #d0d0d0;
+	border-radius:5px;
+	float:left;
+	padding:8px;
+
+}
+
+#ProRemark_Content{
+	float:left;
+	width:590px;
+	font-size:12px;
+	margin-top:5px;
+	color:#444;
+	padding-left:10px;
+}
+
+.ProRemark_Info{
+	display:block;
+	border-style:solid;
+	border-color:#750000;
+	border-width:0 0 1px 0;
+	color:#750000;
+	font-size:12px;
+	font-weight:bold;
+	width:100px;
+	line-height:20px;
+	float:left;
+}
+
+.ProjectView_Info{
+	display:block;
+	float:left;
+	width:630px;
+	text-align:center;
+	color:#750000;
+	font-size:13px;
+	font-weight:bold;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+.MainBar .Passage #BudgetForm
+{
+
+}
+
+.MainBar .Passage #BudgetForm p
+{
+    padding: 0 0 30px 0;
+    margin-top: 0;
+}
+
+.MainBar #marginHelper
+{
+    height: 10px;
+    width: 620px;
+}
+
+/*SideBar Starts here**********************************/
+.floor-left
+{
+    width: 280px;
+    height: 900px;
+}
+
+.SideBar
+{
+    height: auto;
+    background-color: /*#f1f2f3*/white;
+    margin-top: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-style:solid;
+    border-width:1px 0 1px 1px;
+    border-color:#a0a0a0;
+    margin-left:3px;
+    margin-right:-6px;
+    min-height:1008px;
+}
+
+
+.SideBar .UserName
+{
+    margin-left: 10px;
+    margin-top: 15px;
+    width: 130px;
+    height: 15px;
+    margin-bottom: 15px;
+    border-style:solid;
+    border-width:0 0 2px 0;
+    border-color:#750000;
+    margin-right:10px;
+    float:left;
+    padding: 15px;
+}
+
+.SideBar .UserName a
+{
+    font-size: 20px;
+    color: #750000;
+    line-height: 3px;
+}
+
+/********************************张正涵新增************************/
+
+#UserPhoto{
+	border:1px solid #d0d0d0;
+	width:70px;
+	height:70px;
+	float:right;
+	padding:3px;
+	margin-top:30px;
+	margin-right:15px;
+}
+
+#UserPhoto img{
+	width:70px;
+	height:70px;
+}
+
+.UserNumberDiv{
+	float:left;
+	width:130px;
+	font-size:12.5px;
+	color:#a0a0a0;
+	margin-top:-10px;
+	margin-left:20px;
+}
+
+.Separate{
+	background-image:url("../Images/comment_title.png");
+	background-repeat:repeat-x;
+	height:30px;
+	width:269px;
+	float:left;
+	margin-top:20px;
+	border-style:solid;
+	border-width:1px 0;
+	border-color:#c0c0c0;
+	font-family:"微软雅黑";
+	font-size:12.5px;
+	color:#444;
+	padding-left:10px;
+	font-weight:bold;
+}
+
+#StudentIntro{
+	float:left;
+	font-size:12px;
+	color:#444;
+	line-height:24px;
+	margin-left:13px;
+	margin-top:10px;
+	width:255px;
+	height:100px;
+	text-indent:2em;
+}
+
+#ContactInfo{
+	float:left;
+	font-size:12.5px;
+	color:#444;
+	margin-left:15px;
+	margin-top:10px;
+	font-family:"微软雅黑";
+}
+
+.ContactInfo_Info{
+	text-align:right;
+	display:inline-block;
+	width:70px;
+	color:#750000;
+}
+
+#ViewDonateInfo{
+	float:left;
+}
+
+#ViewDonateInfo_Number{
+	display:block;
+	width:100px;
+	height:30px;
+	background-color:#f0f0f0;
+	border-width:0 5px;
+	border-style:solid;
+	border-color:#4D0000;
+	color:#750000;
+	font-weight:bold;
+	margin-top:20px;
+	margin-left:80px;
+	text-align:center;
+	box-shadow:0 1px 4px 0px #4a4a4a;
+    -webkit-box-shadow:0 1px 4px 0px #4a4a4a;
+}
+
+#ViewDonateInfo_Date{
+	font-size:12.5px;
+	display:block;
+	margin-top:8px;
+	color:#444;
+	margin-left:63px;
+
+}
+
+.Question{
+	float:left;
+	margin-left:20px;
+	font-size:13px;
+	margin-top:15px;
+	width:250px;
+}
+
+.Question_Info{
+	color:#750000;
+	font-weight:bold;
+	float:left;
+}
+
+.Question_Answer{
+	color:#444;
+	line-height: 20px;
+	display: inline-block;
+	width: 220px;
+	float: left;
+	margin-top:6px;
+}
+
+.Question_hr{
+	color:#c0c0c0;
+	margin-left:0px;
+	margin-top:7px;
+}
+
+.Question_Margin{
+	display:block;
+	width:100px;
+	height:12px;
+	float:left;
+}
+
+.MoreQuestion{
+	display:block;
+	float:right;
+	text-align:right;
+	font-weight:bold;
+	color:#750000;
+	width:60px;
+	margin-top:5px;
+}
+
+.Question a:hover{
+	text-decoration:underline;
+}
+
+.Advertisement{
+	background-color:#f0f0f0;
+	border-style:solid;
+	border-color:#a0a0a0;
+	border-width:1px;
+	width:235px;
+	height:100px;
+	margin-left:20px;
+	float:left;
+	margin-top:25px;
+	text-align:center;
+	font-size:12.5px;
+	color:#858585;
+}
+
+
+/*.SideBar .Name .TitleHelper
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #AE0000;
+}*/
+
+/*SideBar ReadFace Section********/
+
+.SideBar .ReadFace
+{
+    padding: 0 0 0 15px;
+    position: absolute;
+    border-style: none;
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 2px 1px #888;
+    -webkit-box-shadow: 0 0 2px 1px #888;
+}
+
+.SideBar .ReadFace div
+{
+    padding: 0;
+}
+
+SideBar .ReadFace .Avatar
+{
+    width: 100%;
+    height: 100%;
+}
+
+.SideBar .ReadFace img
+{
+    width: 140px;
+    height: 140px;
+}
+
+.SideBar .ReadFace .cc
+{
+    width: 140px;
+    height: 140px;
+    margin-top: 15px;
+}
+
+.SideBar .ReadFace .StuIntro
+{
+    width: 350px;
+    height: 140px;
+}
+
+.SideBar .ReadFace .StuIntro p
+{
+    margin: 20px;
+}
+/*ReadFace Section********/
+
+.SideBar .Face
+{
+    width: 140px;
+    height: 140px;
+    margin-left: 0;
+}
+
+.SideBar .Face img
+{
+    width: 140px;
+    height: 140px;
+}
+
+.SideBar .UserSysTitle
+{
+    margin-left: -2px;
+    width: 110px;
+    height: 22px;
+    border-style: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: 1px 0 2px 1px #888;
+    -webkit-box-shadow: 1px 0 2px 1px #888;
+}
+
+.SideBar .UserSysTitle p
+{
+    font-size: 17px;
+    margin-top: 0;
+}
+
+.SideBar .UserSysScore
+{
+    margin-left: -2px;
+    width: 155px;
+    height: 45px;
+    border-style: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: 1px 0 2px 1px #888;
+    -webkit-box-shadow: 1px 0 2px 1px #888;
+}
+
+.SideBar .UserSysScore p
+{
+    font-size: 15px;
+    margin-top: 0;
+}
+
+.SideBar .UserSys
+{
+    margin-left: -2px;
+    width: 70px;
+    height: 0;
+    border-style: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: /*#0080FF;*/#750000;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: 1px 0 2px 1px #888;
+    -webkit-box-shadow: 1px 0 2px 1px #888;
+}
+
+.SideBar .UserSys p
+{
+    font-size: 15px;
+    line-height: 3px;
+    margin-top: 0;
+    position: absolute;
+}
+
+.SideBar .UserSys p .InfoName
+{
+    color: white;
+}
+
+/*.SideBar .UserSys
+{
+    margin-left: -2px;
+    width: 200px;
+    height: auto;
+    border-style: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #eaebed      white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: 1px 0 2px 1px #888;
+    -webkit-box-shadow: 1px 0 2px 1px #888;
+}
+
+.SideBar .UserSys ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.SideBar .UserSys .InfoName
+{
+
+}
+
+.SideBar .UserSys .InfoName ul
+{
+    margin-right: 50px;
+}*/
+
+/*.SideBar .ProSys ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.SideBar .ProSys .InfoName ul
+{
+    margin-right: 50px;
+}*/
+
+.SideBar .margin
+{
+    width: 200px;
+}
+
+/*Tab Bar Starts here**********************************/
+.MainBar ul
+{
+    margin-left: 2px;
+}
+
+.MainBar ul li
+{
+    font-size: 15px;
+    list-style: none;
+    float: left;
+    /*padding-left: 19px;
+    padding-right: 19px;*/
+    width:208px;
+    text-align:center;
+    background-image:url("../Images/ProjectView_nav.png");
+    background-repeat:repeat-x;
+    border-style:solid;
+    border-width:2px 0 1px 1px;
+    border-color:#d0d0d0;
+    border-top-color:#750000;
+}
+
+.MainBar ul li a
+{
+    color: black;
+    line-height: 40px;
+}
+
+.MainBar ul li .active
+{
+    color: #750000;
+    font-weight:bold;
+    line-height: 40px;
+}
+
+.MainBar ul .active
+{
+    background:none;
+    border-bottom-color:#FFF;
+}
+
+/*PicGallert Starts here**********************************************/
+
+
+/*Global starts here***********************************/
+
+a
+{
+    text-decoration: none;
+}
+
+p,span,a
+{
+	font-family:"微软雅黑";
+}
+
+.even{
+	background:#DBDBDB;
+}

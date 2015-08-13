@@ -1,0 +1,464 @@
+@charset "gb2312";
+/* CSS Document */
+
+div{
+}
+
+#Comment{
+	display:block;
+	width:650px;
+	height:auto;
+	margin-left:3px;
+}
+
+#CommentTitle{
+	width:670px;
+	height:30px;
+	background-image:url("../Images/comment_title.png");
+	background-repeat:repeat-x;
+	border-color:#a0a0a0;
+	border-style:solid;
+	border-width:0 1px 1px 1px;
+}
+
+#CommentTitle_span{
+	font-family:"Î¢ÈíÑÅºÚ";
+	font-size:12.5px;
+	font-weight:bold;
+	margin-left:15px;
+}
+
+#CommentNav{
+	width:670px;
+	height:31px;
+	border-style:solid;
+	border-color:#a0a0a0;
+	border-width:0 1px 1px 1px;
+	padding-top:15px;
+}
+
+#CommentNav ul{
+	font-family:"Î¢ÈíÑÅºÚ";
+	font-size:13px;
+	margin-left:45px;
+
+}
+
+#CommentNav li{
+	float:left;
+	margin-right:40px;
+	height:30px;
+	width:150px;
+	background-color:#f0f0f0;
+	text-align:center;
+
+}
+
+#CommentNav li a{
+	color:#000;
+}
+
+#CommentNav li.select a{
+	color:#000;
+}
+
+#CommentNav li.select{
+	background-image:url("../Images/subsubtab.png");
+	background-repeat:no-repeat;
+	background-color:#fff;
+	border-style:solid;
+	border-width:1px;
+	border-color:#a0a0a0;
+	border-bottom-color:#FFF;
+	font-weight:bold;
+	position:relative;
+	z-index:1000;
+}
+
+#CommentNav_Create{
+	display:block;
+	height:30px;
+	width:94px;
+	background-image:url("../Images/button1.png");
+	float:left;
+	font-size:12px;
+	color:#FFF;
+	text-align:center;
+	margin-left:60px;
+	margin-top:1px;
+}
+
+#CommentList{
+	width:670px;
+	height:auto;
+	border-color:#a0a0a0;
+	border-style:solid;
+	border-width:0 1px 1px 1px;
+	padding-top:1px;
+	overflow:hidden;
+}
+
+#CommentCreate{
+	width:670px;
+	height:210px;
+	border-color:#a0a0a0;
+	border-style:solid;
+	border-width:0 1px 1px 1px;
+	padding-top:10px;
+	background-color:#f0f0f0;
+	border-bottom-right-radius:5px;
+}
+
+#CommentCreate_span{
+	display:block;
+	width:130px;
+	font-size:15px;
+	font-weight:bold;
+	line-height:25px;
+	color:#750000;
+	margin-left:20px;
+	padding-left:5px;
+	padding-top:-3px;
+	border-color:#750000;
+	border-style:solid;
+	border-width:0 0 1px 0;
+}
+
+#CommentCreate_content{
+	margin-left:20px;
+	margin-top:10px;
+	width:625px;
+	font-size:13px;
+}
+
+#CommentCreate_form span{
+	float:left;
+}
+
+#wordsleft{
+	margin-left:330px;
+	color:#808080;
+}
+
+#CommentCreate_button{
+	border:none;
+	height:30px;
+	width:94px;
+	background-image:url("../Images/button1.png");
+	color:white;
+	float:right;
+	cursor:pointer;
+}
+
+#VeriCoRefr{
+	color:#750000;
+	cursor:pointer;
+	float:left;
+
+}
+
+#VeriImg{
+	height:30px;
+	margin-left:10px;
+}
+
+#RanCoInp{
+	width:50px;
+	border-style:solid;
+	border-color:#a0a0a0;
+	border-width:1px;
+	float:left;
+}
+
+#AlertVeriFalse{
+	color:red;
+	font-weight:bold;
+	margin-left:120px;
+}
+
+#CommentList_Date,#CommentList_Like{
+	padding-bottom:30px;
+}
+
+.ShowComment{
+	width:620px;
+	height:auto;
+	margin-left:25px;
+	margin-top:20px;
+	overflow:hidden;
+}
+
+.CommentPhoto_div{
+	float:left;
+	background-color:#f0f0f0;
+	padding:1px;
+	height:36px;
+}
+
+.CommentPhoto{
+	width:35px;
+	height:35px;
+}
+
+.CommentInfo{
+	float:left;
+	height:auto;
+	width:570px;
+	margin-left:10px;
+	border-style:solid;
+	border-color:#c0c0c0;
+	border-width:0 0 1px 0;
+}
+
+.CommentInfo_basic span{
+	display:block;
+}
+
+.CommentInfo_basic{
+	height:50px;
+}
+
+.CommentInfo_basic1{
+	width:200px;
+	float:left;
+}
+
+.CommentInfo_basic2{
+	width:350px;
+	float:left;
+}
+
+.CommentName{
+	font-size:15px;
+	font-weight:bold;
+	margin-top:-7px;
+	width:200px;
+}
+
+.CommentName a{
+	color:#750000;
+}
+
+.CommentDate{
+	font-size:12px;
+	color:#a0a0a0;
+	margin-top:-7px;
+	width:200px;
+}
+
+.CommentInfo_content{
+	width:560px;
+	height:auto;
+	color:#555;
+	font-family:"Î¢ÈíÑÅºÚ";
+	font-size:13px;
+	word-wrap: break-word;
+	word-break: normal;
+	line-height:18px;
+}
+
+.NoComment{
+	width:650px;
+	font-family:"Î¢ÈíÑÅºÚ";
+	display:block;
+	font-size:13px;
+	color:#858585;
+	text-align:center;
+	margin-bottom:-18px;
+	margin-top:10px;
+}
+
+.CommentLike,.ReplyLike{
+	display:block;
+	float:left;
+	width:70px;
+	height:20px;
+	font-size:12px;
+	color:#4D0000;
+	border-style:solid;
+	border-color:#750000;
+	border-width:0 3px 0 3px;
+	background-color:#f0f0f0;
+	text-align:center;
+	line-height:20px;
+	cursor:pointer;
+}
+
+.CommentLike{
+	margin-left:188px;
+}
+
+.CommentHate,.ReplyHate{
+	display:block;
+	width:70px;
+	height:20px;
+	margin-left:20px;
+	font-size:12px;
+	color:#08080;
+	border-style:solid;
+	border-color:#808080;
+	border-width:0 3px 0 3px;
+	background-color:#f0f0f0;
+	text-align:center;
+	line-height:20px;
+	cursor:pointer;
+}
+
+.CommentHate{
+	float:left;
+}
+
+.CommentReply_buttonDiv{
+	height:20px;
+	width:570px;
+	margin-top:10px;
+}
+
+.CommentReply_button{
+	display:block;
+	float:right;
+	font-size:12px;
+	line-height:20px;
+	text-align:center;
+	width:80px;
+	border-style:solid;
+	border-color:#a0a0a0;
+	border-width:1px 1px 0 1px;
+	border-top-left-radius:4px;
+	border-top-right-radius:4px;
+	background-color:#f8f8f8;
+	cursor:pointer;
+	color:#4D0000;
+}
+
+.CommentReply,.ShowReply{
+	height:105px;
+	background-color:#f8f8f8;
+	border-style:solid;
+	border-color:#a0a0a0;
+	border-width:1px;
+	margin-bottom:20px;
+	padding:4px;
+}
+
+.CommentReply{
+	width:560px;
+}
+
+.CommentReply_info,.ShowReply_info{
+	font-size:12px;
+	color:#a5a5a5;
+	display:block;
+	float:left;
+	margin-left:5px;
+}
+
+.CommentReply_info{
+	margin-top:-6px;
+}
+
+.CommentReply_confirm,.ShowReply_confirm{
+	background-image:url("../Images/button4.png");
+	width:95px;
+	height:30px;
+	float:right;
+	margin-right:3px;
+	cursor:pointer;
+}
+
+.CommentReply_confirm{
+	margin-top:-5px;
+}
+
+.ReplyOutside{
+	height:auto;
+	width:auto;
+	overflow:hidden;
+	margin:15px 0 5px -40px;
+	padding:8px 8px 0 8px;
+	border:1px solid #c0c0c0;
+	background-color:#fdfdfd;
+}
+
+.ReplyInfo{
+	float:left;
+	height:auto;
+	width:90%;
+	margin-left:10px;
+	word-wrap: break-word;
+	word-break: normal;
+	float:right;
+}
+
+.ReplyInfo_content{
+	color:#555;
+	font-family:"Î¢ÈíÑÅºÚ";
+	font-size:13px;
+	line-height:18px;
+}
+
+.ReplyLike{
+	float:right;
+}
+
+.ReplyHate{
+	float:right;
+}
+
+.ShowReply_buttonDiv{
+	height:20px;
+	width:auto;
+	margin-top:10px;
+	margin-bottom:1px;
+}
+
+.ShowReply{
+	width:auto;
+}
+
+.ShowReply_content{
+	float:left;
+	width:99%;
+}
+
+.ShowReply_info{
+	margin-top:5px;
+}
+
+.ShowReply_confirm{
+	margin-top:4px;
+}
+
+.CommentPage{
+	font-family:"Î¢ÈíÑÅºÚ";
+	font-size:12px;
+	float:right;
+	color:#4D0000;
+	margin-right:30px;
+	margin-bottom:10px;
+	width:200px;
+	border-width:1px 0 0 0;
+	border-style:solid;
+	border-color:#750000;
+	text-align:right;
+}
+
+.CommentVote_InfoDiv, .ReplyVote_InfoDiv{
+	float:left;
+	line-height: 25px;
+	font-size: 13px;
+	background-color: #750000;
+	width: 120px;
+	text-align: center;
+	color: white;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-style: solid;
+	border-width: 1px 1px 0 1px;
+	border-color: #A0A0A0;
+	display:none;
+}
+
+.ReplyVote_InfoDiv{
+	margin-top:5px;
+}

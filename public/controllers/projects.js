@@ -45,8 +45,23 @@ exports.getProjects = function (req, res) {
     query.find({
         success: function (projects) {
             res.status(200).json(projects);
-        }, error: function (error) {
-            res.status(500).send(error);
+        }, error: function (object, error) {
+            res.status(500).send(error.message);
+        }
+    })
+};
+
+/**
+ * Get info for one particular project.
+ */
+exports.getProject = function (req, res) {
+    var query = new AV.Query(ProjectInfo);
+
+    query.get(req.params.pid, {
+        success: function (project) {
+            res.status(200).json(project);
+        }, error: function (object, error) {
+            res.status(500).send(error.message);
         }
     })
 };

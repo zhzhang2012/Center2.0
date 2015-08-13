@@ -4,8 +4,16 @@ angular.module('Center.project.controller', [])
     .controller('ProjectListController', ['$scope', '$http', function ($scope, $http) {
 
     }])
-    .controller('ProjectDetailController', ['$scope', function ($scope) {
-
+    .controller('ProjectDetailController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+        // TODO: Pop up a loading image when loading resources, and use promise to notify when all resources finish loading
+        $http.get('/projects/' + $routeParams.pid)
+            .success(function(project) {
+                $scope.projectData = project;
+            })
+            .error (function(err) {
+                // TODO: Pop up error message
+                console.log(err);
+            });
     }])
     .controller('ProjectApplyController_Intro', ['$scope', '$http', '$location', function ($scope, $http, $location) {
         $scope.projectInfoData = {

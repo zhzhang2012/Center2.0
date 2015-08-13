@@ -14,7 +14,7 @@ angular.module('Center').config(['$routeProvider',
                 templateUrl: "modules/project/partials/list.html",
                 controller: "ProjectListController"
             })
-            .when('/projects/:projectId', {
+            .when('/projects/:pid', {
                 templateUrl: "modules/project/partials/detail.html",
                 controller: "ProjectDetailController"
             })
