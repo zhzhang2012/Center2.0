@@ -1,9 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+<ng-include src="'modules/headers/partials/top.html'"></ng-include>
 
-</body>
-</html>
+<div id="layout_apply">
+    <div id="apply_content">
+
+        <span class="ApplyStep_Info">
+            <img src="Images/decorate_left.png" width="30px" height="10px">&nbsp;申请项目资金&nbsp;
+            <img src="Images/decorate_right.png" width="30px" height="10px"></span>
+
+            <table>
+                <tr id="ApplyStep1_tr">
+                    <th scope="col" class="Name">物品/活动名称</th>
+                    <th scope="col" class="Price">单价</th>
+                    <th scope="col" class="Amount">数量</th>
+                    <th scope="col" class="Remark">备注</th>
+                </tr>
+                <tbody id="InputContent">
+                <tr ng-repeat="item in items">
+                    <td id="Name_{{ $index }}">
+                        <input type="text" id="tdName_{{ $index }}" class="Name" ng-model="item.name"/>
+                    </td>
+                    <td id="Price_{{ $index }}">
+                        <input type="text" id="tdPrice_{{ $index }}" class="Price" ng-model="item.price"/>
+                    </td>
+                    <td id="Amount_{{ $index }}">
+                        <input type="text" id="tdAmount_{{ $index }}" value="1" class="Amount" ng-model="item.amount"/>
+                    </td>
+                    <td id="Remark_{{ $index }}">
+                        <textarea id="tdRemark_{{ $index }}" class="Remark" wrap="virtual" ng-model="item.remark">
+                        </textarea>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            <input type="button" id="AddLine" class="ItemEdit_button" ng-click="addLine()" value="增加"/>
+            <input type="text" id="EditNumber" ng-model="addNum" style="width:30px; text-align:center;"/>&nbsp;行&nbsp;&nbsp;&nbsp;
+            <input type="button" id="DeleteLine" class="ItemEdit_button" ng-click="removeLine()" value="删除"/>
+            <input type="text" id="SelectNumber" ng-model="removeNum" style="width:30px; text-align:center;"/>&nbsp;行<br>
+            <input type="hidden" id="GetNumber" name="GetNumber" value="1"/>
+            <input type="hidden" id="ProjectId" name="ProjectId" value=""/>
+
+            <div>
+                <button name="submit" class="pjt_next" ng-click="submitBudgets()">提交</button>
+            </div>
+    </div>
+</div>
+
+<ng-include src="'modules/headers/partials/bottom.html'"></ng-include>

@@ -12,7 +12,5 @@ module.exports = function (Data) {
     this.Project_Plan_ = Data.Project_Plan_;
     this.Project_Goal_ = Data.Project_Goal_;
     this.Project_Status_ = Data.Project_Status_;
-    this.Project_Budget_ = Data.Project_Budget_;
-    this.Project_BudgetDdl_ = Data.Project_BudgetDdl_;
 };
 

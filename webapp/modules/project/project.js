@@ -9,12 +9,15 @@ angular.module('Center.project.controller', [])
     }])
     .controller('ProjectApplyController_Intro', ['$scope', '$http', '$location', function ($scope, $http, $location) {
         $scope.projectInfoData = {
-            Project_Title_: "",
             Stu_Name_: "",
             Stu_Info_: "",
+            Project_Title_: "",
+            Project_Class_: "",
+            Project_Type_: "",
             Project_Intro_: "",
             Project_Plan_: "",
-            Project_Goal_: ""
+            Project_Goal_: "",
+            Project_Status_: 1
         };
 
         $scope.stuIntroWordsLeft = 50;
@@ -87,15 +90,79 @@ angular.module('Center.project.controller', [])
                     url: '/project/create',
                     headers: {'Content-Type': 'application/json;charset=UTF-8'},
                     data: $scope.projectInfoData
-                });
-
-                $location.path('/projects/apply/2');
+                })
+                    .success(function (id) {
+                        // TODO: Probably a loading gif here
+                        $location.path('/projects/apply/budgets/' + id);
+                    })
+                    .error(function (msg) {
+                        console.log(msg);
+                        // TODO: Pop up an error message on the screen
+                    });
             }
         };
     }])
-    .controller('ProjectDetailController_Budgets', ['$scope', function ($scope) {
+    .controller('ProjectApplyController_Budgets', ['$scope', '$routeParams', '$http', '$location',
+        function ($scope, $routeParams, $http, $location) {
+            $scope.items = [
+                {}
+            ];
+            $scope.addNum = 1;
+            $scope.removeNum = 1;
 
-    }])
-    .controller('ProjectDetailController_Preview', ['$scope', function ($scope) {
+            $scope.addLine = function () {
+                for (var i = 0; i < $scope.addNum; ++i) {
+                    $scope.items.push({});
+                }
+            };
 
-    }]);
+            $scope.removeLine = function () {
+                var newItems = [];
+                var left = $scope.items.length - $scope.removeNum;
+                left = left >= 0 ? left : 0;
+                for (var i = 0; i < left; ++i)
+                    newItems.push($scope.items[i]);
+                $scope.items = newItems;
+            };
+
+            var isValidForm = function () {
+                for (var i = 0; i < $scope.items.length; ++i) {
+                    if (typeof $scope.items[i].name == "undefined") {
+                        $("#Name_" + i).css("border-width", "2px");
+                        $("#Name_" + i).css("border-color", "red");
+                        return false;
+                    } else if (typeof $scope.items[i].price == "undefined") {
+                        $("#Price_" + i).css("border-width", "2px");
+                        $("#Price_" + i).css("border-color", "red");
+                        return false;
+                    } else if (typeof $scope.items[i].amount == "undefined") {
+                        $("#Amount_" + i).css("border-width", "2px");
+                        $("#Amount_" + i).css("border-color", "red");
+                        return false;
+                    }
+                }
+                return true;
+            };
+
+            $scope.submitBudgets = function () {
+                if (isValidForm()) {
+                    $http({
+                        method: 'POST',
+                        url: '/project/budgets',
+                        headers: {'Content-Type': 'application/json;charset=UTF-8'},
+                        data: {
+                            pid: $routeParams.pid,
+                            data: $scope.items
+                        }
+                    })
+                        .success(function (id) {
+                            // TODO: Probably a loading gif here
+                            $location.path('/projects/' + id);
+                        })
+                        .error(function (msg) {
+                            console.log(msg);
+                            // TODO: Pop up an error message on the screen
+                        });
+                }
+            };
+        }]);
