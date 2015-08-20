@@ -1,0 +1,472 @@
+div
+{
+    margin: 0 auto;
+}
+
+span, a, p
+{
+    color: #750000;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+body{
+    margin: 0;
+}
+
+/************************************************************************************************/
+
+
+body #register_head{
+	height:30px;
+	width:962px;
+	background-color:#FAFAFA;
+}
+
+body #header{
+	width: 960px;
+	height: 102px;
+	background-color: #FAFAFA;
+        /*border: 1px solid #2F0000;*/
+}
+
+#layout_head{
+	width: 952px;
+	height: 102px;
+}
+
+#register_frame{
+	width:952px;
+	height:26px;
+}
+
+#icon{
+	float:left;
+	margin-top:4px;
+	margin-left:8px;
+	background-image:url(../Images/BHSF_2.png);
+	background-size:78px 23px;
+	background-repeat:no-repeat;
+	height:20px;
+	width:80px;
+}
+
+#welcome{
+	float:left;
+	color:/*#F0F0F0*/#750000;
+	font-family:"Œ¢»Ì—≈∫⁄";
+	font-size:12px;
+	margin-top:8px;
+	margin-left:20px;
+}
+
+#login {
+	float: right;
+	padding-top: 6px;
+	color:#FFF;
+	margin-right:25px;
+	text-align:right;
+}
+
+#login a{
+	font-size:14px;
+	text-decoration:none;
+	font-family:"Œ¢»Ì—≈∫⁄";
+}
+
+#login a:visited{
+	text-decoration:none;
+	color:/*#FFF*/#750000;
+}
+
+#logo{
+	width: 128px;
+	height: 83px;
+	background-image:url(../Images/logo.png);
+	float:left;
+}
+
+#title{
+	background-color:#E0E0E0;
+	height:33px;
+	width:415px;
+	color:#4D0000;
+	font-family:"¡• È";
+	font-size:24px;
+	text-align:right;
+	font-weight:bold;
+	margin-left:-10px;
+	padding-top:4px;
+	padding-right:23px;
+	box-shadow:0 2px 1px 1px #999;
+}
+
+#title_english{
+	width:250px;
+	font-family:"Calibri";
+	color:#750000;
+	margin-left:140px;
+	padding-top:9px;
+	line-height:17px;
+}
+
+
+
+/************************************************************************************************/
+
+#LogInBack
+{
+    width: 100%;
+    height: 330px;
+    /*background-image: url('../Images/OrangeBack.png');*/
+    background-image: url('../Images/Aqua-red.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 30px auto;
+}
+
+    #marginHelper
+    {
+        width: 960px;
+        height: 330px;
+    }
+
+    #LogInBox
+    {
+        width: 310px;
+        height: auto;
+        margin: -20px auto auto 590px;
+        background-color: white;
+        position: absolute;
+        border-radius: 5px;
+        border: 1px solid #BDBDBD;
+    }
+
+        #LogInTitle
+        {
+            width: 250px;
+            height: 40px;
+            margin: 5px auto 0px 20px;
+            padding-top: 15px;
+            font-size: 20px;
+            font-family: monospace;
+        }
+
+        .LogInLabel
+        {
+            width: 250px;
+            height: 35px;
+            margin: 5px auto 0px 20px;
+            font-size: 17px;
+            font-family: monospace;
+        }
+
+            .LogInLabel a
+            {
+                font-size: 15px;
+                line-height: 17px;
+            }
+
+
+
+            .LogInLabel a:hover
+
+            {
+
+            	text-decoration:underline;
+
+            }
+
+        .LogInInput
+        {
+            width: 250px;
+            height: 35px;
+            margin: 5px auto 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #750000;
+            font-size: 17px;
+            /*background-color: #FEF7F3;*/
+	    background-color: #FCF5F2;
+	    outline: none;
+	    -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+	    -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+	    box-shadow: inset 2px 2px 2px 0px #dddddd;
+        }
+
+	.alert
+	{
+	    width: 250px;
+	    height: auto;
+	    margin: 0;
+	    margin-left: 20px;
+	    color: red;
+	    font-size: 14px;
+
+	    font-family:"Œ¢»Ì—≈∫⁄";
+	}
+
+	#VeriCoIsHere
+	{
+	    width: 250px;
+	    margin: 5px auto 5px 20px;
+	    font-size: 15px;
+	}
+
+
+
+	#AlertVeriFalse{
+
+		display:hidden;
+
+		margin-left:4px;
+
+		color:red;
+
+		font-family:"Œ¢»Ì—≈∫⁄";
+
+		font-size:12.5px;
+
+	}
+
+        #LogInOptionBox
+        {
+            width: 250px;
+            height: 20px;
+            margin: 5px auto 10px 20px;
+        }
+
+            #LogInOption
+            {
+                border: 1px solid #FFB17F;
+            }
+
+            #LogInOptionBox span a
+            {
+                /*font-style: none;
+                font-family: monospace;*/
+                font-size: 15px;
+            }
+
+/***********************************************/
+
+	    
+    #QuickReg
+    {
+    	width:600px;
+    	height:340px;
+    	background-color:white;
+    	position:absolute;
+    	border: 1px solid #BDBDBD;
+    	margin-top:-6px;
+    	border-top-left-radius:5px;
+    	border-bottom-left-radius:5px;
+    }
+    
+    #RegTitle{
+    	font-size: 21px;
+    	color:black;
+    	font-weight:bold;
+    	margin-left:20px;
+    	margin-top:20px;
+    	margin-bottom: 12px;
+    	display: block;
+    }
+
+        .submitButton
+        {
+            width: 120px;
+            height: 40px;
+            margin: 0 20px 38px 20px;
+            background-color: #750000;
+            color: white;
+            font-size: 16px;
+            border: 1px solid #BDBDBD;
+            border-radius: 5px;
+
+            cursor:pointer;
+        }
+
+        #RegisterSubmitButton
+        {
+            padding: 10px 40px;
+            margin: 0 auto 30px 0;
+            background-color: white;
+            border: 1px solid #750000;
+            border-radius: 5px;
+            color: #750000;
+            font-size: 16px;
+
+            cursor:pointer;
+        }
+        
+        .RegisterInput
+        {
+            width: 250px;
+            height: 25px;
+            margin: 8px auto 8px 20px;
+            border-radius: 3px;
+            border: 1px solid #750000;
+            font-size: 17px;
+            /*background-color: #FEF7F3;*/
+	    background-color: #f8f8f8;
+	    outline: none;
+	    -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+	    -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+	    box-shadow: inset 2px 2px 2px 0px #dddddd;
+        }
+        
+        .register_alert{
+			color:red;
+        }
+        
+        .txt-info{
+        	color:#a0a0a0;
+        	font-size: 13px;
+        	margin-left:75px;
+        }
+
+    /*#LogInDec
+    {
+        width: 400px;
+        height: 340px;
+        margin: 20px auto auto 30px;
+        background-color: white;
+        position: absolute;
+    }*/
+
+/************************************************************************************************/
+
+
+
+#redirect_info{
+
+	width:850px;
+
+	height:200px;
+
+	box-shadow:0 0 6px 3px #d0d0d0;
+
+	border-radius:7px;
+
+	margin-top:20px;
+
+	padding-top:100px;
+
+	line-height:40px;
+
+	text-align:center;
+
+	font-family:"Œ¢»Ì—≈∫⁄";
+
+	font-size:18px;
+
+}
+
+
+.time{
+
+	margin:5px;
+
+	color:#4D0000;
+
+	font-weight:bold;
+
+	font-size:18px;
+
+}
+
+
+
+#method2 {
+
+	font-family:"Œ¢»Ì—≈∫⁄";
+
+	font-size:14px;
+
+	color:#888;
+
+	letter-spacing:1px;
+
+}
+
+
+
+.expression{
+
+	margin-top:-50px;
+
+	margin-bottom:-30px;
+
+	margin-right:20px;
+
+}
+
+
+
+#subcontent{
+
+	font-size:14px;
+
+	color:#750000;
+
+	margin-top:30px;
+
+}
+
+
+
+#UserEmail_span{
+
+	font-family:"Calibri";
+
+	font-weight:bold;
+
+	font-size:23px;
+
+}
+
+
+
+#UserEmail_span a:hover{
+
+	text-decoration:underline;
+
+}
+
+
+/************************************************************************************************/
+#layout_footer{
+	width:952px;
+	height:83px;
+	background-color:#F5F6F8;
+	margin-top:25px;
+}
+
+#footerLink {
+	height: 30px;
+	line-height: 30px;
+	color:#000;
+	text-align:center;
+}
+
+#footerLink a {
+	font-size: 16px;
+	text-decoration:none;
+	color:#000000;
+	font-family:"Œ¢»Ì—≈∫⁄";
+}
+
+
+#footerInfo {
+	color:#666666;
+	line-height: 24px;
+	margin:auto;
+	text-align:center;
+}
+
+#footerLogo {
+	width:253px;
+	height:56px;
+	background-image:url(../Images/BHSF_2.png);
+}
+/************************************************************************************************/

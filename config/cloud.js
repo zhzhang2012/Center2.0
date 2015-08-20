@@ -1,10 +1,10 @@
 var AV = require('leanengine');
 
 /**
- * 一个简单的云代码方法
+ * Cloud function for processing jumps after verifying email
  */
-AV.Cloud.define('hello', function(request, response) {
-  response.success('Hello world!');
+AV.Cloud.onVerified('email', function (req, res) {
+    res.redirect('/login');
 });
 
 module.exports = AV.Cloud;

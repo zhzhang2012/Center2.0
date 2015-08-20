@@ -1,0 +1,272 @@
+<script type="text/javascript">
+    g = 0;
+
+    function shakeBox() {
+        $("#LogInBox").shake(4, 20, 400);
+    }
+
+    function LoginSubmit() {
+        if (!/^\s*$/.test($('#LogInInputUserName').val())) {
+
+            if ($('#LogInInputUserPwd').val() === '') {
+                g++;
+                LogInCheck(g);
+            } else {
+                var BHSF = document.cookie.split(";")[0];
+                var Email = document.login.LogInInputUserName.value;
+                var Pass = document.login.LogInInputUserPwd.value;
+                //alert(BHSF);
+                if (BHSF.split("=")[1] >= 3) {
+                    return false;
+                }
+
+                var auto;
+                if (document.getElementById("LogInOption").checked) {
+                    auto = 1;
+                } else {
+                    auto = 0;
+                }
+                $.ajax({
+                    url: "BLL_AjaxSwitch.php",
+                    type: "POST",
+                    data: {action: "LogIn", email: Email, password: Pass, auto: auto},
+                    success: function (result) {
+                        //alert(result);
+                        if (result == "fail1") {
+                            g++;
+                            LogInCheck(g);
+                        } else if (result == "fail2") {
+                            $('.alert').html('');
+                            $('#EmailAlert').html("您的邮箱还没有经过验证！");
+                            shakeBox();
+                            return false;
+                        } else if (result == "fail3") {
+                            window.location.href = "User_Redirect.php?type=8";
+                        } else {
+                            g = 0;
+                            var CheckCo = LogInCheck(g);
+                            //alert(result);
+                            if (CheckCo) {
+                                window.location.href = "User_Redirect.php?type=2";
+                            }
+                        }
+
+                    }
+                });
+
+            }
+        }
+    }
+
+    function FormSubmit() {
+
+        if (/^\s*$/.test($('#newName').val())) {
+            $('.alert').html('');
+            $('#newName_Alert').html("您还未填写真实姓名！");
+            $('#newName').focus();
+            $('#newName').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (/^\s*$/.test($('#newEmail').val())) {
+            $('.alert').html('');
+            $('#newEmail_Alert').html("您还未填写邮箱！");
+            $('#newEmail').focus();
+            $('#newEmail').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (!/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test($('#newEmail').val())) {
+            $('.alert').html('');
+            $('#newEmail_Alert').html("请换一个有效的邮箱地址！");
+            $('#newEmail').focus();
+            $('#newEmail').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (/^\s*$/.test($('#newPass').val())) {
+            $('.alert').html('');
+            $('#newPass_Alert').html("您还还未填写密码！");
+            $('#newPass').focus();
+            $('#newPass').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (!/^[a-zA-Z]\w{5,17}$/.test($('#newPass').val())) {
+            $('.alert').html('');
+            $('#newPass_Alert').html("您填写的密码不符合要求！");
+            $('#newPass').focus();
+            $('#newPass').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (/^\s*$/.test($('#newYear').val())) {
+            $('.alert').html('');
+            $('#newYear_Alert').html("您还还未填写届别！");
+            $('#newYear').focus();
+            $('#newYear').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        }
+
+    }
+
+    $(document).ready(function () {
+        $('#LogInSubmitButton').click(function () {
+            LoginSubmit();
+        });
+
+        $("#FindPass").click(function () {
+            window.location.href = "User_Secure.php?type=1&step=1";
+        });
+
+        $('#newEmail').blur(function () {
+            if (!/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test($('#newEmail').val())) {
+                $('.alert').html('');
+                $('#newEmail_Alert').css({"color": "red"});
+                $('#newEmail_Alert').html("请换一个有效的邮箱地址！");
+                //$('#UserEmail_Input').focus();
+                $('#newEmail').css({"border-color": "red", "border-width": "2px"});
+                return false;
+            } else {
+                var Email = document.getElementById("newEmail").value;
+                //alert(Email);
+                $.ajax({
+                    url: "BLL_AjaxSwitch.php",
+                    type: "POST",
+                    data: {action: "UserEmail_Check", email: Email},
+                    success: function (returnJson) {
+                        $('#newEmail_Alert').empty();
+                        //$('#UserEmail_Alert').html(returnJson);
+
+                        if (returnJson == 0) {
+                            $('#newEmail_Alert').html("此邮箱地址已被占用！");
+                            $('#newEmail_Alert').css({"color": "red"});
+                            $('#newEmail').css({"border-color": "red", "border-width": "2px"});
+                        } else {
+                            $('#newEmail').css({"border-color": "green", "border-width": "2px"});
+                            $('#newEmail_Alert').css({"color": "green"});
+                            $('#newEmail_Alert').html("此邮箱地址可用！");
+                        }
+                    }
+                });
+            }
+        });
+
+        $('#newPass').blur(function () {
+            if (!/^[a-zA-Z]\w{5,17}$/.test($('#newPass').val())) {
+                $('.alert').html('');
+                $('#newPass_Alert').html("您填写的密码不符合要求！");
+                //$('#UserPwd_Input').focus();
+                $('#newPass').css({"border-color": "red", "border-width": "2px"});
+            } else {
+                $('.alert').html('');
+                $('#newPass').css({"border-color": "#750000", "border-width": "1px"});
+            }
+        });
+
+    });
+</script>
+<!--<script type="text/javascript">-->
+
+<!--function ShowCo() {-->
+<!--num = ''; //define num as String-->
+<!--for (i = 0; i < 4; i++) {-->
+<!--tmp = Math.ceil((Math.random() * 15));//Math.random returns random value between 0 && 1; Math.ceil rounds the number upward to its nearest integer;-->
+<!--if (tmp > 9) {-->
+<!--switch (tmp) {-->
+<!--case(10):-->
+<!--num += 'A';-->
+<!--break;-->
+<!--case(11):-->
+<!--num += 'B';-->
+<!--break;-->
+<!--case(12):-->
+<!--num += 'C';-->
+<!--break;-->
+<!--case(13):-->
+<!--num += 'D';-->
+<!--break;-->
+<!--case(14):-->
+<!--num += 'E';-->
+<!--break;-->
+<!--case(15):-->
+<!--num += 'F';-->
+<!--break;-->
+<!--}-->
+<!--} else {-->
+<!--num += tmp;-->
+<!--}-->
+<!--$('#VeriCoHol').attr('src', 'VeriCoGen.php?num=' + num);-->
+<!--}-->
+<!--}-->
+
+<!--$(document).ready(function () {-->
+<!--ShowCo();-->
+<!--$('#VeriCoRefr').click(function () {-->
+<!--ShowCo();-->
+<!--});-->
+<!--});-->
+<!--</script>-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#VeriCoIsHere').hide();
+        $('#AlertVeriFalse').hide();
+
+        //disable verification check
+    });
+    function LogInCheck(j) {
+        //alert(j);
+        if (/^\s*$/.test($('#LogInInputUserName').val())) {
+            $('.alert').html('');
+            $('#EmailAlert').html("请填写邮箱！");
+            return false;
+        } else if (j < 4 && j > 0) {
+            $('.alert').html('');
+            $('#PwdAlert').html('您的用户名或密码不正确！<br>您还有' + (4 - j) + '次登录机会！');
+            if (j == 1) {
+                $('#VeriCoIsHere').slideDown();
+            } else {
+                $('#VeriCoIsHere').show();
+            }
+            shakeBox();
+            return false;
+        } else if (j == 4) {
+            window.location = "UFcknSucker.php";
+            return false;
+        } else if ($('#VeriCoIsHere').css("display") == "block" && $('#RanCoInp').val() != num) {
+            $('#AlertVeriFalse').show();
+            $('#AlertVeriFalse').html('验证码错误！');
+            ShowCo();
+            shakeBox();
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+</head>
+
+<ng-include src="'modules/headers/partials/top.html'"></ng-include>
+
+<div id="LogInBack">
+    <div id="marginHelper">
+        <div id="LogInBox">
+            <div id="LogInTitle"><span>用户登录</span></div>
+            <div class="LogInLabel" id="#LogInEmailLabel"><span>邮箱</span></div>
+            <input type="text" name="UserName" class="LogInInput" id="LogInInputUserName" ng-model="userData.email"/>
+
+            <div class="alert" id="EmailAlert"></div>
+            <div class="LogInLabel" id="#LogInPwdLabel"><span>密码</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><a
+                    id="FindPass" href="#">忘记密码？</a></span></div>
+            <input type="password" name="UserPwd" class="LogInInput" id="LogInInputUserPwd"
+                   ng-model="userData.password"/>
+
+            <div class="alert" id="PwdAlert">
+            </div>
+            <div id="VeriCoIsHere">
+                <input type="button" name="VeriCoRefr" id="VeriCoRefr" value="看不清，换一张"
+                       style="float:right;margin-right:10px;"/>
+                <!--input type="hidden" name="RanCoHol" id="RanCoHol"/-->
+                <div><img id="VeriCoHol"/></div>
+                <span style="font-family: none;margin-top: 10px;display: inline-block;width: 105px; height:25px;">请输入验证码：</span><input
+                    type="text" id="RanCoInp"
+                    style="margin-top: 10px;border-radius: 2px;border: 1px solid #C1C1C1;float:right;width:120px;"/>
+
+                <div id="AlertVeriFalse"></div>
+            </div>
+            <div id="LogInOptionBox"><input type="checkbox" id="LogInOption"/><span><a href="#">下次自动登录？</a></span></div>
+            <button name="loginSubmit" id="LogInSubmitButton" class="submitButton" ng-click="login()"/>
+            登陆</button>
+        </div>
+
+        <ng-include src="'modules/headers/partials/bottom.html'"></ng-include>

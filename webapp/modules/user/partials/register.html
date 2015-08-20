@@ -1,0 +1,786 @@
+<ng-include src="'modules/headers/partials/top.html'"></ng-include>
+
+<div id="layout_apply">
+
+<script type="text/javascript">
+
+function FormSubmit() {
+    if ($('#RanCoInp').val() !== num) {
+
+        $('#AlertVeriFalse').html('验证码错误！');
+        $('#AlertVeriFalse').css("color", "red");
+        $('#AlertVeriFalse').css("font-weight", "bold");
+        $('#RanCoInp').css({"border-color": "red", "border-width": "2px"});
+        return false;
+
+    } else {
+
+        if (/^\s*$/.test($('#UserName_Input').val())) {
+            $('.alert').html('');
+            $('#UserName_Alert').html("您还未填写真实姓名！");
+            $('#UserName_Input').focus();
+            $('#UserName_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (/^\s*$/.test($('#UserEmail_Input').val())) {
+            $('.alert').html('');
+            $('#UserEmail_Alert').html("您还未填写邮箱！");
+            $('#UserEmail_Input').focus();
+            $('#UserEmail_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (!/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test($('#UserEmail_Input').val())) {
+            $('.alert').html('');
+            $('#UserEmail_Alert').html("请换一个有效的邮箱地址！");
+            $('#UserEmail_Input').focus();
+            $('#UserEmail_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (/^\s*$/.test($('#UserPwd_Input').val())) {
+            $('.alert').html('');
+            $('#UserPwd_Alert').html("您还还未填写密码！");
+            $('#UserPwd_Input').focus();
+            $('#UserPwd_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (!/^[a-zA-Z]\w{5,17}$/.test($('#UserPwd_Input').val())) {
+            $('.alert').html('');
+            $('#UserPwd_Alert').html("您填写的密码不符合要求！");
+            $('#UserPwd_Input').focus();
+            $('#UserPwd_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (/^\s*$/.test($('#UserPwdConfirm_Input').val())) {
+            $('.alert').html('');
+            $('#UserPwdConfirm_Alert').html("您还未确认您的密码！");
+            $('#UserPwdConfirm_Input').focus();
+            $('#UserPwdConfirm_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if ($('#UserPwdConfirm_Input').val() !== $('#UserPwd_Input').val()) {
+            $('.alert').html('');
+            $('#UserPwdConfirm_Alert').html("您两次输入的密码不相同！");
+            $('#UserPwdConfirm_Input').focus();
+            $('#UserPwdConfirm_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (/^\s*$/.test($('#UserGender_Input').val())) {
+            $('.alert').html('');
+            $('#UserGender_Alert').html("您还未选择性别！");
+            $('#UserGender_Input').focus();
+            $('#UserGender_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (/^\s*$/.test($('#UserMobile_Input').val())) {
+            $('.alert').html('');
+            $('#UserMobile_Alert').html("您还未填写手机号码！");
+            $('#UserMobile_Input').focus();
+            $('#UserMobile_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else if (/^\s*$/.test($('#UserIntro_Short_Input').val())) {
+            $('#UserIntro_Short_Alert').html("您的简介超过了50字！");
+            $('#UserIntro_Input').focus();
+            $('#UserIntro_Short_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        }
+
+        var UserClass = document.getElementsByName("UserClass");
+        var UserClassVal;
+
+        for (var i = 0; i < UserClass.length; i++) {
+            if (UserClass[i].checked) {
+                UserClassVal = UserClass[i].value;
+                break;
+            }
+        }
+
+        if (UserClassVal == "1") {
+
+
+            if (/^\s*$/.test($('#UserStuParentName_Input').val())) {
+                $('.alert').html('');
+                $('#UserStuParentName_Alert').html("您还未填写监护人姓名！");
+                $('#UserStuParentName_Input').focus();
+                $('#UserStuParentName_Input').css({"border-color": "red", "border-width": "2px"});
+                return false;
+            } else if (/^\s*$/.test($('#UserStuParentTel_Input').val())) {
+                $('.alert').html('');
+                $('#UserStuParentTel_Alert').html("您还未填写监护人联系方式！");
+                $('#UserStuParentTel_Input').focus();
+                $('#UserStuParentTel_Input').css({"border-color": "red", "border-width": "2px"});
+                return false;
+            } else if (/^\s*$/.test($('#UserStuNum_Input').val())) {
+                $('.alert').html('');
+                $('#UserStuNum_Alert').html("您还未填写学籍号！");
+                $('#UserStuNum_Input').focus();
+                $('#UserStuNum_Input').css({"border-color": "red", "border-width": "2px"});
+                return false;
+            }
+
+        } else {
+
+            if (/^\s*$/.test($('#UserAluGraYear_Input').val())) {
+                $('.alert').html('');
+                $('#UserAluGraYear_Alert').html("您还未填写毕业年份！");
+                $('#UserAluGraYear_Input').focus();
+                $('#UserAluGraYear_Input').css({"border-color": "red", "border-width": "2px"});
+                return false;
+            } else if (/^\s*$/.test($('#UserAluGraClass_Input').val())) {
+                $('.alert').html('');
+                $('#UserAluGraClass_Alert').html("您还未填写毕业班级！");
+                $('#UserAluGraClass_Input').focus();
+                $('#UserAluGraClass_Input').css({"border-color": "red", "border-width": "2px"});
+                return false;
+            } else if (/^\s*$/.test($('#UserAluTeacherName_Input').val())) {
+                $('.alert').html('');
+                $('#UserAluTeacherName_Alert').html("您还未填写班主任姓名！");
+                $('#UserAluTeacherName_Input').focus();
+                $('#UserAluTeacherName_Input').css({"border-color": "red", "border-width": "2px"});
+                return false;
+            } else if (/^\s*$/.test($('#UserAluWorkAdd_Input').val())) {
+                $('.alert').html('');
+                $('#UserAluWorkAdd_Alert').html("您还未填写工作单位地址！");
+                $('#UserAluWorkAdd_Input').focus();
+                $('#UserAluWorkAdd_Input').css({"border-color": "red", "border-width": "2px"});
+                return false;
+            } else if (/^\s*$/.test($('#UserAluWorkTel_Input').val())) {
+                $('.alert').html('');
+                $('#UserAluWorkTel_Alert').html("您还未填写工作单位联系方式！");
+                $('#UserAluWorkTel_Input').focus();
+                $('#UserAluWorkTel_Input').css({"border-color": "red", "border-width": "2px"});
+                return false;
+            }
+        }
+    }
+}
+
+
+$(document).ready(function () {
+
+    $("#Separate_Content div").hide();
+    $("#Separate_Content_Stu").show();
+    $("#Separate_Content_Stu div").show();
+    $("#SeparateApply_Nav ul li:first").addClass("select");
+    $("#SeparateApply_Nav ul li a").click(function () {
+        $("#SeparateApply_Nav ul li").removeClass("select");
+        $(this).parent().addClass("select");
+        var currentTab = $(this).attr('href');
+        $("#Separate_Content div").hide();
+        $(currentTab).show();
+        $(currentTab + ' div').show();
+        return false;
+    });
+
+//    ShowCo();
+//
+//    $('#VeriCoRefr').click(function(){
+//        ShowCo();
+//    });
+//    function ShowCo()
+//    {
+//        num = ''; //define num as String
+//        for(i=0;i<4;i++){
+//            tmp=Math.ceil((Math.random()*15));//Math.random returns random value between 0 && 1; Math.ceil rounds the number upward to its nearest integer;
+//            if(tmp>9){
+//                switch(tmp){
+//                    case(10):
+//                        num+='A';
+//                        break;
+//                    case(11):
+//                        num+='B';
+//                        break;
+//                    case(12):
+//                        num+='C';
+//                        break;
+//                    case(13):
+//                        num+='D';
+//                        break;
+//                    case(14):
+//                        num+='E';
+//                        break;
+//                    case(15):
+//                        num+='F';
+//                        break;
+//                }
+//            }else{
+//                num+=tmp;
+//            }
+//            $('#VeriCoHol').attr('src','VeriCoGen.php?num='+num);
+//        }
+//    }
+
+    $('#UserEmail_Input').blur(function () {
+        if (!/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test($('#UserEmail_Input').val())) {
+            $('.alert').html('');
+            $('#UserEmail_Alert').css({"color": "red"});
+            $('#UserEmail_Alert').html("请换一个有效的邮箱地址！");
+            //$('#UserEmail_Input').focus();
+            $('#UserEmail_Input').css({"border-color": "red", "border-width": "2px"});
+            return false;
+        } else {
+            var Email = document.getElementById("UserEmail_Input").value;
+            //alert(Email);
+            $.ajax({
+                url: "BLL_AjaxSwitch.php",
+                type: "POST",
+                data: {action: "UserEmail_Check", email: Email},
+                success: function (returnJson) {
+                    $('#UserEmail_Alert').empty();
+                    //$('#UserEmail_Alert').html(returnJson);
+
+                    if (returnJson == 0) {
+                        $('#UserEmail_Alert').html("此邮箱地址已被占用！");
+                        $('#UserEmail_Alert').css({"color": "red"});
+                        $('#UserEmail_Input').css({"border-color": "red", "border-width": "2px"});
+                    } else {
+                        $('#UserEmail_Input').css({"border-color": "green", "border-width": "2px"});
+                        $('#UserEmail_Alert').css({"color": "green"});
+                        $('#UserEmail_Alert').html("此邮箱地址可用！");
+                    }
+                }
+            });
+        }
+    });
+
+    $('#UserPwd_Input').blur(function () {
+        if (!/^[a-zA-Z]\w{5,17}$/.test($('#UserPwd_Input').val())) {
+            $('.alert').html('');
+            $('#UserPwd_Alert').html("您填写的密码不符合要求！");
+            //$('#UserPwd_Input').focus();
+            $('#UserPwd_Input').css({"border-color": "red", "border-width": "2px"});
+        } else {
+            $('.alert').html('');
+            $('#UserPwd_Input').css({"border-color": "#C1C1C1", "border-width": "1px"});
+        }
+    });
+    //pwd confirm immediate check
+    $('#UserPwdConfirm_Input').blur(function () {
+        if ($('#UserPwdConfirm_Input').val() !== $('#UserPwd_Input').val()) {
+            $('.alert').html('');
+            $('#UserPwdConfirm_Alert').html("您两次输入的密码不相同！");
+            //$('#UserPwdConfirm_Input').focus();
+            $('#UserPwdConfirm_Input').css({"border-color": "red", "border-width": "2px"});
+        } else {
+            $('.alert').html('');
+            $('#UserPwdConfirm_Input').css({"border-color": "#C1C1C1", "border-width": "1px"});
+        }
+    });
+
+
+    //输入框中文字自动消失与自动显示——学生校友
+
+    $("#UserName_Input").focus(function () {
+        if ($("#UserName_Input").val() == '请填写您的真实姓名') {
+            $("#UserName_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserName_Input").val() == '') {
+                    $("#UserName_Input").val("请填写您的真实姓名").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserEmail_Input").focus(function () {
+        if ($("#UserEmail_Input").val() == '请填写有效的邮箱地址') {
+            $("#UserEmail_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserEmail_Input").val() == '') {
+                    $("#UserEmail_Input").val("请填写有效的邮箱地址").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserPwd_Input").focus(function () {
+        $("#UserPwd_Input").val("").css("color", "#000");
+    });
+
+    $("#UserPwdConfirm_Input").focus(function () {
+        $("#UserPwdConfirm_Input").val("").css("color", "#000");
+    });
+
+    $("#UserFamilyAddress_Input").focus(function () {
+        if ($("#UserFamilyAddress_Input").val() == '请填写家庭地址') {
+            $("#UserFamilyAddress_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserFamilyAddress_Input").val() == '') {
+                    $("#UserFamilyAddress_Input").val("请填写家庭地址").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserFamilyTel_Input").focus(function () {
+        if ($("#UserFamilyTel_Input").val() == '请填写家庭座机电话号码') {
+            $("#UserFamilyTel_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserFamilyTel_Input").val() == '') {
+                    $("#UserFamilyTel_Input").val("请填写家庭座机电话号码").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserMobile_Input").focus(function () {
+        if ($("#UserMobile_Input").val() == '请填写手机号码') {
+            $("#UserMobile_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserMobile_Input").val() == '') {
+                    $("#UserMobile_Input").val("请填写手机号码").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserBirth_Input").focus(function () {
+        if ($("#UserBirth_Input").val() == '请填写生日') {
+            $("#UserBirth_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserBirth_Input").val() == '') {
+                    $("#UserBirth_Input").val("请填写生日").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserIntro_Short_Input").focus(function () {
+        if ($("#UserIntro_Short_Input").val() == '请在此填写能代表您特点的介绍') {
+            $("#UserIntro_Short_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserIntro_Short_Input").val() == '') {
+                    $("#UserIntro_Short_Input").val("请在此填写能代表您特点的介绍").css("color", "#ccc")
+                }
+                ;
+            });
+
+
+    //输入框中文字自动消失与自动显示——学生
+
+
+    $("#UserStuNum_Input").focus(function () {
+        if ($("#UserStuNum_Input").val() == '请填写学籍号') {
+            $("#UserStuNum_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserStuNum_Input").val() == '') {
+                    $("#UserStuNum_Input").val("请填写学籍号").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserStuParentName_Input").focus(function () {
+        if ($("#UserStuParentName_Input").val() == '请填写一方监护人的姓名') {
+            $("#UserStuParentName_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserStuParentName_Input").val() == '') {
+                    $("#UserStuParentName_Input").val("请填写一方监护人的姓名").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserStuParentTel_Input").focus(function () {
+        if ($("#UserStuParentTel_Input").val() == '请填写监护人的手机号码') {
+            $("#UserStuParentTel_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserStuParentTel_Input").val() == '') {
+                    $("#UserStuParentTel_Input").val("请填写监护人的手机号码").css("color", "#ccc")
+                }
+                ;
+            });
+
+
+    //输入框中文字自动消失与自动显示——校友
+
+
+    $("#UserAluWorkAdd_Input").focus(function () {
+        if ($("#UserAluWorkAdd_Input").val() == '请填写工作单位的地址') {
+            $("#UserAluWorkAdd_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserAluWorkAdd_Input").val() == '') {
+                    $("#UserAluWorkAdd_Input").val("请填写工作单位的地址").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserAluWorkTel_Input").focus(function () {
+        if ($("#UserAluWorkTel_Input").val() == '请填写工作单位的电话号码') {
+            $("#UserAluWorkTel_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserAluWorkTel_Input").val() == '') {
+                    $("#UserAluWorkTel_Input").val("请填写工作单位的电话号码").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserAluGraYear_Input").focus(function () {
+        if ($("#UserAluGraYear_Input").val() == '请填写您毕业的年份') {
+            $("#UserAluGraYear_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserAluGraYear_Input").val() == '') {
+                    $("#UserAluGraYear_Input").val("请填写您毕业的年份").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserAluGraClass_Input").focus(function () {
+        if ($("#UserAluGraClass_Input").val() == '请填写您毕业的班级') {
+            $("#UserAluGraClass_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserAluGraClass_Input").val() == '') {
+                    $("#UserAluGraClass_Input").val("请填写您毕业的班级").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#UserAluTeacherName_Input").focus(function () {
+        if ($("#UserAluTeacherName_Input").val() == '请填写您当时的班主任姓名') {
+            $("#UserAluTeacherName_Input").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#UserAluTeacherName_Input").val() == '') {
+                    $("#UserAluTeacherName_Input").val("请填写您当时的班主任姓名").css("color", "#ccc")
+                }
+                ;
+            });
+
+    $("#RanCoInp").focus(function () {
+        if ($("#RanCoInp").val() == '请输入图片中显示的文字') {
+            $("#RanCoInp").val("").css("color", "#000")
+        }
+        ;
+    }).blur(function () {
+                if ($("#RanCoInp").val() == '') {
+                    $("#RanCoInp").val("请输入图片中显示的文字").css("color", "#ccc")
+                }
+                ;
+            });
+
+
+    $("#Register_button").mouseover(function () {
+        $(this).css("background-image", "url('Images/button1_over.png')");
+    });
+
+    $("#Register_button").mouseout(function () {
+        $(this).css("background-image", "url('Images/button1.png')");
+    });
+
+    $("#Register_cancel").mouseover(function () {
+        $(this).css("background-image", "url('Images/button4_over.png')");
+    });
+
+    $("#Register_cancel").mouseout(function () {
+        $(this).css("background-image", "url('Images/button4.png')");
+    });
+
+    $("#Register_cancel").click(function () {
+        window.location.href = "Index.php";
+    });
+
+});
+</script>
+
+<div id="apply_content">            <!--申请项目内容div-->
+
+<div class="info_frame">
+    <label class="info_label">
+        <span class="txt_ipt">*</span>
+        请填写您的邮箱
+    </label>
+
+    <div class="info_frame">
+        <input name="UserEmail" id="UserEmail_Input" class="info_ipt" value="" ng-model="userData.email"/>
+
+        <div id="UserEmail_Alert" class="alert"></div>
+        <div style="clear:both;"></div>
+
+        <div class="txt-info">请填写您正确的电子邮件地址，此地址将作为您激活以及登陆的唯一渠道
+        </div>
+    </div>
+</div>
+
+<div class="info_frame">
+    <label class="info_label">
+        <span class="txt_ipt">*</span>
+        设定登陆密码
+    </label>
+
+    <div class="info_frame">
+        <input name="UserPwd" type="password" id="UserPwd_Input" class="info_ipt" ng-model="userData.password"/>
+
+        <div id="UserPwd_Alert" class="alert"></div>
+        <div style="clear:both;">
+        </div>
+        <div class="txt-info">在此填写密码，必须以字母开头，只支持6位到18位数字、下划线及英文大小写字母
+        </div>
+    </div>
+</div>
+
+<div class="info_frame">
+    <label class="info_label">
+        <span class="txt_ipt">*</span>
+        请再次输入密码
+    </label>
+
+    <div class="info_frame">
+        <input name="UserPwdConfirm" type="password" id="UserPwdConfirm_Input" class="info_ipt" value=""/>
+
+        <div id="UserPwdConfirm_Alert" class="alert"></div>
+        <div style="clear:both;">
+        </div>
+        <div class="txt-info">在此再次输入密码
+        </div>
+    </div>
+</div>
+
+<div class="info_frame">
+    <label class="info_label">
+        <span class="txt_ipt">*</span>
+        请填写真实姓名
+    </label>
+
+    <div class="info_frame">
+        <input name="UserName" type="text" id="UserName_Input" class="info_ipt" ng-model="userData.name"/>
+
+        <div id="UserName_Alert" class="alert"></div>
+        <div style="clear:both;">
+        </div>
+        <!--<div class="txt-info">请填写您的真实姓名
+        </div>-->
+    </div>
+</div>
+
+<div class="info_frame">
+    <label class="info_label">
+        <span class="txt_ipt">*</span>
+        请填写您的手机
+    </label>
+
+    <div class="info_frame">
+        <input name="UserMobile" type="text" id="UserMobile_Input" class="info_ipt" ng-model="userData.mobile"/>
+
+        <div id="UserMobile_Alert" class="alert"></div>
+        <div style="clear:both;">
+        </div>
+        <!--<div class="txt-info">请填写手机号码
+        </div>-->
+    </div>
+</div>
+
+<hr size="1" width="800px" color="#750000">
+
+<div id="ChooseClass">
+    <span id="ChooseClass_span">请选择您的身份：</span>
+    <input type="radio" name="UserClass" ng-model="userData.category" value="1" checked="true"/>学生
+    <input type="radio" name="UserClass" ng-model="userData.category" value="2"/>校友
+</div>
+
+<div id="SeparateApply_Nav">
+    <ul>
+        <li><a href="#Separate_Content_Stu">如果您是学生请填写</a></li>
+    </ul>
+</div>
+
+<div id="Separate_Content">
+    <div id="Separate_Content_Stu">
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                学生学籍号
+            </label>
+
+            <div class="info_frame">
+                <input name="UserStuNum" id="UserStuNum_Input" class="info_ipt" value=""></input>
+
+                <div id="UserStuNum_Alert" class="alert"></div>
+                <div style="clear:both;">
+                </div>
+                <!--<div class="txt-info">请填写学籍号
+                </div>-->
+            </div>
+        </div>
+
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                监护人姓名
+            </label>
+
+            <div class="info_frame">
+                <input name="UserStuParentName" id="UserStuParentName_Input" class="info_ipt" value=""></input>
+
+                <div id="UserStuParentName_Alert" class="alert"></div>
+                <div style="clear:both;">
+                </div>
+                <!--<div class="txt-info">请填写一方监护人的姓名
+                </div>-->
+            </div>
+        </div>
+
+        <div class="info_frame">
+            <label class="info_label">
+                <span class="txt_ipt">*</span>
+                监护人联系方式
+            </label>
+
+            <div class="info_frame">
+                <input name="UserStuParentTel" id="UserStuParentTel_Input" class="info_ipt" value=""></input>
+
+                <div id="UserStuParentTel_Alert" class="alert"></div>
+                <div style="clear:both;">
+                </div>
+                <!--<div class="txt-info">请填写监护人的手机号码
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr size="1" width="800px" color="#750000">
+
+<div id="Register_Agree">
+    <div class="info_frame">
+        <label class="info_label">
+            <span class="txt_ipt"></span>
+            服务条款
+        </label>
+
+        <div class="info_frame">
+            <textarea id="Register_Agreement" readonly="readonly" wrap="virtual">北京四中“校友-学生”活动交流平台 服务条款
+                一、接受条款
+                北京四中“校友-学生”活动交流平台（下称“我们”或者“交流平台”）所提供的服务包含此网站体验和使用、互联网消息传递服务以及我们提供的与此网站有关的任何其他功能(合称"交流平台服务")。具体内容有北京四中学生项目活动的发布、展示、更新，与校友、其他学生交流并得到来自校友的捐助；同时校友可以浏览项目、留言、提建议，并一对一地资助自己感兴趣的项目。无论用户是以"访客"(表示用户只是浏览我们的网站)还是"成员"(表示用户已在我们的网站注册并登录)的身份使用交流平台服务，均表示该用户同意遵守本使用协议。
+                如果用户自愿成为交流平台用户并与其他成员交流(包括通过我们的网站直接留言讨论或通过我们的各种服务（例如：电话，邮箱）而连接到的成员)，以及使本网站各种服务功能，请务必认真阅读本协议并在注册过程中表明同意接受本协议。
+                本协议的内容包含北京四中“校友-学生”活动交流平台关于接受我们的服务和在我们的网站上发布内容的规定、用户使用我们的服务所享有的权利、承担的义务和对使用交流平台服务所受的限制、以及交流平台的隐私条款。如果用户选择部分使用我们的服务，可能会收到要求其下载软件或内容的通知，和/或要求用户同意附加条款和条件的通知。除非用户选择使用的点服务相关的附加条款和条件另有规定，附加的条款和条件都应被包含于本协议中。
+                北京四中“校友-学生”活动交流平台有权随时修改本协议文本中的任何条款。一旦我们对本协议进行修改,北京四中“校友-学生”活动交流平台将会以公告形式发布通知。任何修改自发布之日起生效。如果用户在该等修改发布后继续使用北京四中“校友-学生”活动交流平台服务，则表示该用户同意遵守对本协议所作出的该等修改。因此，请用户务必定期查阅本协议，以确保了解所有关于本协议的最新修改。如果用户不同意北京四中“校友-学生”活动交流平台对本协议进行的修改，请用户离开网站并立即停止使用北京四中“校友-学生”活动交流平台服务。同时，用户还应当删除个人档案并注销成员资格。
+                二、遵守法律
+                当使用北京四中“校友-学生”活动交流平台服务时，用户同意遵守中华人民共和国(下称"中国")的相关法律法规，包括但不限于《中华人民共和国宪法》、《中华人民共和国合同法》、《中华人民共和国电信条例》、《互联网信息服务管理办法》、《互联网电子公告服务管理规定》、《中华人民共和国保守国家秘密法》、《全国人民代表大会常务委员会关于维护互联网安全的决定》、《中华人民共和国计算机信息系统安全保护条例》、《计算机信息网络国际联网安全保护管理办法》、《中华人民共和国著作权法》及其实施条例、《互联网著作权行政保护办法》等。用户只有在同意遵守所有相关法律法规和本协议时，才有权使用北京四中“校友-学生”活动交流平台服务(无论用户是否有意访问或使用此服务)。请用户仔细阅读本协议并将其妥善保存。
+
+                三、用户帐号、密码及安全
+                用户应提供及时、详尽、准确的个人资料实名注册，并不断及时更新注册时提供的个人资料，保持其详尽、准确。此外，校友注册应上传中华人民共和国身份证扫描件或复印件。所有用户输入的资料将引用为注册资料。北京四中“校友-学生”活动交流平台不对因用户提交的注册信息不真实或未及时准确变更信息而引起的问题、争议及其后果承担责任。
+                用户不应将其帐号、密码转让、出借或告知他人，供他人使用。如用户发现帐号遭他人非法使用，应立即通知北京四中“校友-学生”活动交流平台。因黑客行为或用户的保管疏忽导致帐号、密码遭他人非法使用的，北京四中“校友-学生”活动交流平台不承担任何责任。
+                四、隐私权政策
+                用户提供的注册信息及北京四中“校友-学生”活动交流平台保留的用户所有资料将受到中国相关法律法规和北京四中“校友-学生”活动交流平台《隐私权政策》的规范。《隐私权政策》构成本协议不可分割的一部分。
+                五、上传内容
+                用户通过任何北京四中“校友-学生”活动交流平台提供的服务上传、张贴、发送(通过电子邮件或任何其它方式传送)的文本、文件、图像、照片、视频、声音、音乐、其他创作作品或任何其他材料(以下简称"内容"，包括用户个人的或个人创作的照片、声音、视频等)，无论系公开还是私下传播，均由用户和内容提供者承担责任，北京四中“校友-学生”活动交流平台不对该等内容的正确性、完整性或品质作出任何保证。
+                用户在使用北京四中“校友-学生”活动交流平台服务时，可能会接触到令人不快、不适当或令人厌恶之内容，用户需在接受服务前自行做出判断。在任何情况下，我们均不为任何内容负责(包括但不限于任何内容的错误、遗漏、不准确或不真实)，亦不对通过北京四中“校友-学生”活动交流平台服务上传、张贴、发送(通过电子邮件或任何其它方式传送)的内容衍生的任何损失或损害负责。北京四中“校友-学生”活动交流平台在管理过程中发现或接到举报并进行初步调查后，有权依法停止任何前述内容的传播并采取进一步行动，包括但不限于暂停某些用户使用北京四中“校友-学生”活动交流平台的全部或部分服务，保存有关记录，并向有关机关报告。
+                六、用户行为
+                用户在使用北京四中“校友-学生”活动交流平台服务时，必须遵守中华人民共和国相关法律法规的规定，用户保证不会利用北京四中“校友-学生”活动交流平台服务进行任何违法或不正当的活动，包括但不限于下列行为∶
+                上传、展示、张贴或以其它方式传播含有下列内容之一的信息：
+                -反对宪法及其他法律的基本原则的;
+                -危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的;
+                -损害国家荣誉和利益的;
+                -煽动民族仇恨、民族歧视、破坏民族团结的;
+                -破坏国家宗教政策，宣扬邪教和封建迷信的;
+                -散布谣言，扰乱社会秩序，破坏社会稳定的;
+                -散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的;
+                -侮辱或者诽谤他人，侵害他人合法权利的;
+                -含有虚假、有害、胁迫、侵害他人隐私、骚扰、中伤、粗俗、猥亵、或其它道德上令人反感的内容;
+                -含有中国法律、法规、规章、条例以及任何具有法律效力的规范所限制或禁止的其它内容的;
+                -不得为任何非法目的而使用网络服务系统;
+                -用户同时保证不会利用北京四中“校友-学生”活动交流平台服务从事以下活动：
+                -未经允许，进入计算机信息网络或者使用计算机信息网络资源的;
+                -未经允许，对计算机信息网络功能进行删除、修改或者增加的;
+                -未经允许，对进入计算机信息网络中存储、处理或者传输的数据和应用程序进行删除、修改或者增加的;故意制作、传播计算机病毒等破坏性程序的;
+                -其他危害计算机信息网络安全的行为。
+                如用户在使用网络服务时违反任何上述规定，北京四中“校友-学生”活动交流平台或经其授权者有权要求该用户改正或直接采取一切必要措施(包括但不限于更改、删除相关内容、暂停或终止相关用户使用北京四中“校友-学生”活动交流平台服务)以减轻和消除该用户不当行为造成的影响。
+                用户不得对北京四中“校友-学生”活动交流平台服务的任何部分或全部以及通过北京四中“校友-学生”活动交流平台取得的任何形式的信息，进行复制、拷贝、出售、转售或用于任何其它商业目的。
+                用户须对自己在使用北京四中“校友-学生”活动交流平台服务过程中的行为承担法律责任。用户承担法律责任的形式包括但不限于：停止侵害行为，向受到侵害者公开赔礼道歉，恢复受到侵害者的名誉，对受到侵害者进行赔偿。
+                如果北京四中“校友-学生”活动交流平台网站因某用户的非法或不当行为受到行政处罚或承担了任何形式的侵权损害赔偿责任，该用户应向北京四中“校友-学生”活动交流平台进行赔偿(不低于北京四中“校友-学生”活动交流平台向第三方赔偿的金额)并通过全国性的媒体向北京四中“校友-学生”活动交流平台公开赔礼道歉。
+                七、知识产权和其他合法权益(包括但不限于名誉权、商誉等)
+                北京四中“校友-学生”活动交流平台并不对用户发布到北京四中“校友-学生”活动交流平台服务中的文本、文件、图像、照片、视频、声音、音乐、其他创作作品或任何其他材料(前文称为"内容")拥有任何所有权。在用户将内容发布到北京四中“校友-学生”活动交流平台服务中后，用户将继续对内容享有权利，并且有权选择恰当的方式使用该等内容。如果用户在北京四中“校友-学生”活动交流平台服务中或通过交流平台服务展示或发表任何内容，即表明该用户就此授予北京四中“校友-学生”活动交流平台一个有限的许可以使北京四中“校友-学生”活动交流平台能够合法使用、修改、复制、传播和出版此类内容。
+                用户同意其已就在北京四中“校友-学生”活动交流平台服务所发布的内容，授予北京四中“校友-学生”活动交流平台可以免费的、永久有效的、不可撤销的、非独家的、可转授权的、在全球范围内对所发布内容进行使用、复制、修改、改写、改编、发行、翻译、创造衍生性著作的权利，及/或可以将前述部分或全部内容加以传播、表演、展示，及/或可以将前述部分或全部内容放入任何现在已知和未来开发出的以任何形式、媒体或科技承载的著作当中。
+                用户声明并保证：用户对其在北京四中“校友-学生”活动交流平台服务中或通过北京四中“校友-学生”活动交流平台服务发布的内容拥有合法权利;用户在北京四中“校友-学生”活动交流平台服务中或通过北京四中“校友-学生”活动交流平台服务发布的内容不侵犯任何人的肖像权、隐私权、著作权、商标权、专利权、及其它合同权利。如因用户在北京四中“校友-学生”活动交流平台服务中或通过北京四中“校友-学生”活动交流平台服务发布的内容而需向其他任何人支付许可费或其它费用，全部由该用户承担。
+                北京四中“校友-学生”活动交流平台服务中包含我们提供的内容，包含用户和其他北京四中“校友-学生”活动交流平台许可方的内容(下称"北京四中“校友-学生”活动交流平台的内容")。北京四中“校友-学生”活动交流平台的内容受《中华人民共和国著作权法》、《中华人民共和国商标法》、《中华人民共和国专利法》、《中华人民共和国反不正当竞争法》和其他相关法律法规的保护，北京四中“校友-学生”活动交流平台拥有并保持对北京四中“校友-学生”活动交流平台的内容和北京四中“校友-学生”活动交流平台服务的所有权利。
+                八、国际使用之特别警告
+                用户已了解国际互联网的无国界性，同意遵守所有关于网上行为、内容的法律法规。用户特别同意遵守有关从中国或用户所在国家或地区输出信息所可能涉及、适用的全部法律法规。
+                九、赔偿
+                由于用户通过北京四中“校友-学生”活动交流平台服务上传、张贴、发送或传播的内容，或因用户与本服务连线，或因用户违反本使用协议，或因用户侵害他人任何权利而导致任何第三人向北京四中“校友-学生”活动交流平台提出赔偿请求，该用户同意赔偿我们相应的赔偿金额(包括律师费等)，以使北京四中“校友-学生”活动交流平台的利益免受损害。
+                十、关于使用及储存的一般措施
+                用户承认北京四中“校友-学生”活动交流平台有权制定关于服务使用的一般措施及限制，包括但不限于北京四中“校友-学生”活动交流平台服务将保留用户的电子邮件信息、用户所张贴内容或其它上载内容的最长保留期间、用户一个帐号可收发信息的最大数量、用户帐号当中可收发的单个信息的大小、北京四中“校友-学生”活动交流平台服务器为用户分配的最大磁盘空间，以及一定期间内用户使用北京四中“校友-学生”活动交流平台服务的次数上限(及每次使用时间之上限)。通过北京四中“校友-学生”活动交流平台服务存储或传送的任何信息、通讯资料和其它任何内容，如被删除或未予储存，用户同意北京四中“校友-学生”活动交流平台毋须承担任何责任。用户亦同意，超过一年未使用的帐号，北京四中“校友-学生”活动交流平台有权关闭。北京四中“校友-学生”活动交流平台有权依其自行判断和决定，随时变更相关一般措施及限制。
+                十一、服务的修改
+                用户了解并同意，无论通知与否，北京四中“校友-学生”活动交流平台有权于任何时间暂时或永久修改或终止部分或全部北京四中“校友-学生”活动交流平台服务，对此，北京四中“校友-学生”活动交流平台对用户和任何第三人均无需承担任何责任。用户同意，所有上传、张贴、发送到北京四中“校友-学生”活动交流平台的内容，北京四中“校友-学生”活动交流平台均无保存义务，用户应自行备份。北京四中“校友-学生”活动交流平台不对任何内容丢失以及用户因此而遭受的相关损失承担责任。
+                十二、终止服务
+                用户同意北京四中“校友-学生”活动交流平台可单方面判断并决定，如果用户违反本使用协议或用户长时间未能使用其帐号，北京四中“校友-学生”活动交流平台可以终止该用户的密码、帐号或某些服务的使用，并可将该用户在北京四中“校友-学生”活动交流平台服务中留存的任何内容加以移除或删除。北京四中“校友-学生”活动交流平台亦可基于自身考虑，在通知或未通知之情形下，随时对该用户终止部分或全部服务。用户了解并同意依本使用协议，无需进行事先通知，北京四中“校友-学生”活动交流平台可在发现任何不适宜内容时，立即关闭或删除该用户的帐号及其帐号中所有相关信息及文件，并暂时或永久禁止该用户继续使用前述文件或帐号。
+                十三、与广告商进行的交易
+                用户通过北京四中“校友-学生”活动交流平台服务与广告商进行任何形式的通讯或商业往来，或参与促销活动(包括相关商品或服务的付款及交付)，以及达成的其它任何条款、条件、保证或声明，完全是用户与广告商之间的行为。除有关法律法规明文规定要求北京四中“校友-学生”活动交流平台承担责任外，用户因前述任何交易、沟通等而遭受的任何性质的损失或损害，北京四中“校友-学生”活动交流平台均不予负责。
+                十四、链接
+                用户了解并同意，对于北京四中“校友-学生”活动交流平台服务或第三人提供的其它网站或资源的链接是否可以利用，北京四中“校友-学生”活动交流平台不予负责;存在或源于此类网站或资源的任何内容、广告、产品或其它资料，北京四中“校友-学生”活动交流平台亦不保证或负责。因使用或信赖任何此类网站或资源发布的或经由此类网站或资源获得的任何商品、服务、信息，如对用户造成任何损害，北京四中“校友-学生”活动交流平台不负任何直接或间接责任。
+                十五、禁止商业行为
+                用户同意不对北京四中“校友-学生”活动交流平台服务的任何部分或全部以及用户通过北京四中“校友-学生”活动交流平台的服务取得的任何物品、服务、信息等，进行复制、拷贝、出售、转售或用于任何其它商业目的。
+                十六、北京四中“校友-学生”活动交流平台的专属权利
+                用户了解并同意，北京四中“校友-学生”活动交流平台服务及其所使用的相关软件(以下简称"服务软件")含有受到相关知识产权及其它法律保护的专有保密资料。用户同时了解并同意，经由北京四中“校友-学生”活动交流平台服务或广告商向用户呈现的赞助广告或信息所包含之内容，亦可能受到著作权、商标、专利等相关法律的保护。未经北京四中“校友-学生”活动交流平台或广告商书面授权，用户不得修改、出售、传播部分或全部服务内容或软件，或加以制作衍生服务或软件。北京四中“校友-学生”活动交流平台仅授予用户个人非专属的使用权，用户不得(也不得允许任何第三人)复制、修改、创作衍生著作，或通过进行还原工程、反向组译及其它方式破译原代码。用户也不得以转让、许可、设定任何担保或其它方式移转服务和软件的任何权利。用户同意只能通过由北京四中“校友-学生”活动交流平台所提供的界面而非任何其它方式使用北京四中“校友-学生”活动交流平台服务。
+                十七、担保与保证
+                学生决定承担校友创意项目时，一定要填写家长同意书。同时，当校友看到学生的家长同意书书时，才能与其合作。北京四中“校友-学生”活动交流平台使用协议的任何规定均不会免除因北京四中“校友-学生”活动交流平台造成用户人身伤害或因故意造成用户财产损失而应承担的任何责任。
+                用户使用北京四中“校友-学生”活动交流平台服务的风险由用户个人承担。北京四中“校友-学生”活动交流平台对服务不提供任何明示或默示的担保或保证，包括但不限于商业适售性、特定目的的适用性及未侵害他人权利等的担保或保证。
+                北京四中“校友-学生”活动交流平台亦不保证以下事项：
+                服务将符合用户的要求;
+                服务将不受干扰、及时提供、安全可靠或不会出错;
+                使用服务取得的结果正确可靠;
+                用户经由北京四中“校友-学生”活动交流平台服务购买或取得的任何产品、服务、资讯或其它信息将符合用户的期望，且软件中任何错误都将得到更正。
+                用户应自行决定使用北京四中“校友-学生”活动交流平台服务下载或取得任何资料且自负风险，因任何资料的下载而导致的用户电脑系统损坏或数据流失等后果，由用户自行承担。
+                用户经由北京四中“校友-学生”活动交流平台服务获知的任何建议或信息(无论书面或口头形式)，除非使用协议有明确规定，将不构成北京四中“校友-学生”活动交流平台对用户的任何保证。
+                十八、责任限制
+                用户明确了解并同意，基于以下原因而造成的任何损失，北京四中“校友-学生”活动交流平台均不承担任何直接、间接、附带、特别、衍生性或惩罚性赔偿责任(即使北京四中“校友-学生”活动交流平台事先已被告知用户或第三方可能会产生相关损失)：
+                北京四中“校友-学生”活动交流平台服务的使用或无法使用;
+                通过北京四中“校友-学生”活动交流平台服务购买、兑换、交换取得的任何商品、数据、信息、服务、信息，或缔结交易而发生的成本;
+                用户的传输或数据遭到未获授权的存取或变造;
+                任何第三方在北京四中“校友-学生”活动交流平台服务中所作的声明或行为;
+                与北京四中“校友-学生”活动交流平台服务相关的其它事宜，但本使用协议有明确规定的除外。
+                十九、一般性条款
+                本使用协议构成用户与北京四中“校友-学生”活动交流平台之间的正式协议，并用于规范用户的使用行为。在用户使用北京四中“校友-学生”活动交流平台服务、使用第三方提供的内容或软件时，在遵守本协议的基础上，亦应遵守与该等服务、内容、软件有关附加条款及条件。
+                本使用协以及用户与北京四中“校友-学生”活动交流平台之间的关系，均受到中华人民共和国法律管辖。
+                用户与北京四中“校友-学生”活动交流平台就服务本身、本使用协议或其它有关事项发生的争议，应通过友好协商解决。协商不成的，应向北京市东城区人民法院提起诉讼。
+                北京四中“校友-学生”活动交流平台未行使或执行本使用协议设定、赋予的任何权利，不构成对该等权利的放弃。
+                本使用协议中的任何条款因与中华人民共和国法律相抵触而无效，并不影响其它条款的效力。
+                本使用协议的标题仅供方便阅读而设，如与协议内容存在矛盾，以协议内容为准。
+                二十、举报
+                如用户发现任何违反本服务条款的现象，请及时通知北京四中“校友-学生”活动交流平台管理员。
+            </textarea>
+
+            <div style="clear:both;"></div>
+            <div class="txt-info">请仔细阅读以上协议
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--<div class="info_frame">-->
+    <!--<label class="info_label">-->
+        <!--<span class="txt_ipt"></span>-->
+        <!--请输入验证码-->
+    <!--</label>-->
+
+    <!--<div class="info_frame">-->
+        <!--<input type="text" class="info_ipt" id="RanCoInp" value=""/>&nbsp;&nbsp;-->
+        <!--&lt;!&ndash;input type="hidden" name="RanCoHol" id="RanCoHol"/&ndash;&gt;-->
+        <!--<span id="VeriImg"><img id="VeriCoHol"/></span>-->
+        <!--<input type="button" name="VeriCoRefr" id="VeriCoRefr" value="看不清，换一张"/>-->
+        <!--<span id="AlertVeriFalse"></span>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div id="Register_buttonDiv">
+    <button id="Register_button" name="submit" ng-click="register()"/>同意协议并注册</button>
+    <button id="Register_cancel"/>返回首页</button>
+</div>
+
+</div>
+
+
+</div>
+
+<ng-include src="'modules/headers/partials/bottom.html'"></ng-include>

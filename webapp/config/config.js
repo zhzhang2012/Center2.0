@@ -10,6 +10,14 @@ angular.module('Center').config(['$routeProvider',
                 templateUrl: "modules/index/partials/index.html",
                 controller: "IndexController"
             })
+            .when('/register', {
+                templateUrl: "modules/user/partials/register.html",
+                controller: "RegisterController"
+            })
+            .when('/login', {
+                templateUrl: "modules/user/partials/login.html",
+                controller: "LoginController"
+            })
             .when('/projects/:page', {
                 templateUrl: "modules/project/partials/list.html",
                 controller: "ProjectListController"

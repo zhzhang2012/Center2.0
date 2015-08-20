@@ -127,8 +127,10 @@ angular.module('Center.project.controller', [])
                         // TODO: Probably a loading gif here
                         $location.path('/projects/apply/budgets/' + id);
                     })
-                    .error(function (msg) {
-                        console.log(msg);
+                    .error(function (data, status) {
+                        console.log(data);
+                        if (status == 401)
+                            $location.path('/login');
                         // TODO: Pop up an error message on the screen
                     });
             }

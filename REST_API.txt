@@ -10,3 +10,8 @@ GET /projects/:projectId
 POST /comment
 # Get a list of comments
 GET /comments/:pid
+
+# Register & login
+POST /register
+POST /login
+POST /reset

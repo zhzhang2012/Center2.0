@@ -14,7 +14,7 @@ AV.Promise._isPromisesAPlusCompliant = false;
 var app = require('express')();
 
 // ExpressJS setup
-require('./config/express')(app);
+require('./config/express')(app, AV);
 
 // Routes setup
 require('./config/routes')(app);
